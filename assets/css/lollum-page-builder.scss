@@ -64,18 +64,6 @@
 			margin-bottom: 0;
 		}
 	}
-
-	&.equal-height-yes .lpb-page-row .lpb-row {
-		display: flex;
-
-		.lpb-page-item {
-			flex: 1;
-		}
-
-		.lpb-item-column {
-			height: 100%;
-		}
-	}
 }
 
 .lpb-row {
