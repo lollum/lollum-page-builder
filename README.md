@@ -8,7 +8,8 @@ The Lollum Page Builder plugin is a simple page builder meant for developers. It
 
 To add a new block:
 
-```
+```php
+<?php
 function custom_new_blocks( $blocks ) {
 	$blocks[ 'gallery' ] = array(
 		'id'           => 'gallery',
