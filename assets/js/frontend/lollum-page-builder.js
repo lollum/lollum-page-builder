@@ -43,6 +43,8 @@ jQuery(function($) {
 		$.each(rows, function() {
 			var _this = $(this);
 
+			_this.addClass('hidden-row');
+
 			// use this element as a reference, because
 			// it always has the correct position
 			var reference = _this.next('.lpb-clear-section');
@@ -63,6 +65,8 @@ jQuery(function($) {
 					'padding-right': left_pos + 'px'
 				});
 			}
+
+			_this.removeClass('hidden-row');
 		});
 	}
 

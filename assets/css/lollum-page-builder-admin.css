@@ -516,6 +516,7 @@
 }
 
 #lollum-page-builder .form-field .input-color {
+  height: 27px;
   padding-left: 30px;
 }
 
