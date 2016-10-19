@@ -62,20 +62,6 @@
   margin-bottom: 0;
 }
 
-.lpb-section.equal-height-yes .lpb-page-row .lpb-row {
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.lpb-section.equal-height-yes .lpb-page-row .lpb-row .lpb-page-item {
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.lpb-section.equal-height-yes .lpb-page-row .lpb-row .lpb-item-column {
-  height: 100%;
-}
-
 .lpb-row {
   box-sizing: border-box;
   margin-left: -15px;

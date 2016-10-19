@@ -125,6 +125,18 @@ class LPB_Frontend_Scripts {
 				.lpb-section > .lpb-page-row:last-child .lpb-page-item {
 					margin-bottom: 0;
 				}
+
+				.lpb-section.equal-height-yes .lpb-page-row .lpb-row {
+					display: flex;
+				}
+
+				.lpb-section.equal-height-yes .lpb-page-row .lpb-row .lpb-page-item {
+						flex: 1;
+				}
+
+				.lpb-section.equal-height-yes .lpb-page-row .lpb-row .lpb-item-column {
+					height: 100%;
+				}
 			}
 		";
 
