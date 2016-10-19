@@ -104,7 +104,7 @@ msgstr ""
 msgid "Place elements inside the section"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:35
+#: includes/class-lpb-blocks.php:35, includes/class-lpb-blocks.php:202
 msgid "Background color"
 msgstr ""
 
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Background horizontal position"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:48, includes/class-lpb-blocks.php:261
+#: includes/class-lpb-blocks.php:48, includes/class-lpb-blocks.php:273
 msgid "Left"
 msgstr ""
 
@@ -124,7 +124,7 @@ msgstr ""
 msgid "Middle Left"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:50, includes/class-lpb-blocks.php:61, includes/class-lpb-blocks.php:260
+#: includes/class-lpb-blocks.php:50, includes/class-lpb-blocks.php:61, includes/class-lpb-blocks.php:272
 msgid "Center"
 msgstr ""
 
@@ -132,7 +132,7 @@ msgstr ""
 msgid "Middle Right"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:52, includes/class-lpb-blocks.php:262
+#: includes/class-lpb-blocks.php:52, includes/class-lpb-blocks.php:274
 msgid "Right"
 msgstr ""
 
@@ -188,11 +188,11 @@ msgstr ""
 msgid "Parallax effect?"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:88, includes/class-lpb-blocks.php:127, includes/class-lpb-blocks.php:135, includes/class-lpb-blocks.php:143, includes/class-lpb-blocks.php:197
+#: includes/class-lpb-blocks.php:88, includes/class-lpb-blocks.php:127, includes/class-lpb-blocks.php:136, includes/class-lpb-blocks.php:144, includes/class-lpb-blocks.php:152
 msgid "No"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:89, includes/class-lpb-blocks.php:126, includes/class-lpb-blocks.php:134, includes/class-lpb-blocks.php:142, includes/class-lpb-blocks.php:196
+#: includes/class-lpb-blocks.php:89, includes/class-lpb-blocks.php:128, includes/class-lpb-blocks.php:135, includes/class-lpb-blocks.php:143, includes/class-lpb-blocks.php:151
 msgid "Yes"
 msgstr ""
 
@@ -257,138 +257,150 @@ msgid "No gap"
 msgstr ""
 
 #: includes/class-lpb-blocks.php:123
+msgid "Equal height?"
+msgstr ""
+
+#: includes/class-lpb-blocks.php:124
+msgid "If selected, inner columns will have the same height"
+msgstr ""
+
+#: includes/class-lpb-blocks.php:132
 msgid "Padding top?"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:131
+#: includes/class-lpb-blocks.php:140
 msgid "Padding bottom?"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:139
+#: includes/class-lpb-blocks.php:148
 msgid "Margin bottom?"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:150
+#: includes/class-lpb-blocks.php:159
 msgid "Close Section"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:151
+#: includes/class-lpb-blocks.php:160
 msgid "Close the section"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:158
+#: includes/class-lpb-blocks.php:167
 msgid "Empty Column"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:159
+#: includes/class-lpb-blocks.php:168
 msgid "Blank horizontal space"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:174
+#: includes/class-lpb-blocks.php:183
 msgid "Column"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:175
+#: includes/class-lpb-blocks.php:184
 msgid "A block of text (accepts HTML and shortcodes)"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:189, includes/class-lpb-blocks.php:232
+#: includes/class-lpb-blocks.php:198, includes/class-lpb-blocks.php:244
 msgid "Text"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:193
-msgid "Transparent"
+#: includes/class-lpb-blocks.php:207
+msgid "Column padding"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:204
+#: includes/class-lpb-blocks.php:208
+msgid "The padding of the column in px"
+msgstr ""
+
+#: includes/class-lpb-blocks.php:216
 msgid "Service"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:205
+#: includes/class-lpb-blocks.php:217
 msgid "A text module with titles and icons"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:218
+#: includes/class-lpb-blocks.php:230
 msgid "Title"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:222
+#: includes/class-lpb-blocks.php:234
 msgid "Icon"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:226, includes/class-lpb-blocks.php:266
+#: includes/class-lpb-blocks.php:238, includes/class-lpb-blocks.php:278
 msgid "URL"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:228, includes/class-lpb-blocks.php:268
+#: includes/class-lpb-blocks.php:240, includes/class-lpb-blocks.php:280
 msgid "Add an optional link"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:239
+#: includes/class-lpb-blocks.php:251
 msgid "Single Image"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:240
+#: includes/class-lpb-blocks.php:252
 msgid "A single image"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:253
+#: includes/class-lpb-blocks.php:265
 msgid "Image"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:257
+#: includes/class-lpb-blocks.php:269
 msgid "Alignment"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:274
+#: includes/class-lpb-blocks.php:286
 msgid "Blog Grid"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:275
+#: includes/class-lpb-blocks.php:287
 msgid "A list of posts in grid"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:280
+#: includes/class-lpb-blocks.php:292
 msgid "Number of posts"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:285
+#: includes/class-lpb-blocks.php:297
 msgid "Number of columns"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:290
+#: includes/class-lpb-blocks.php:302
 msgid "Order by?"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:294
+#: includes/class-lpb-blocks.php:306
 msgid "Date"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:295, includes/class-lpb-blocks.php:300
+#: includes/class-lpb-blocks.php:307, includes/class-lpb-blocks.php:312
 msgid "IDs"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:296, includes/class-lpb-blocks.php:306
+#: includes/class-lpb-blocks.php:308, includes/class-lpb-blocks.php:318
 msgid "Category"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:302
+#: includes/class-lpb-blocks.php:314
 msgid "Comma separated list of post IDs"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:308
+#: includes/class-lpb-blocks.php:320
 msgid "The slug of the category"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:318
+#: includes/class-lpb-blocks.php:330
 msgid "Revolution Slider"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:319
+#: includes/class-lpb-blocks.php:331
 msgid "Place a slider"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:333
+#: includes/class-lpb-blocks.php:345
 msgid "Select slider"
 msgstr ""
 
