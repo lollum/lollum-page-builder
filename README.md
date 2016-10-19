@@ -1,5 +1,5 @@
 # Lollum Page Builder
-A simple and lightweight page builder for developers.
+A simple and lightweight WordPress page builder for developers.
 
 ## Description
 The Lollum Page Builder plugin is a simple page builder meant for developers. It doesn't provide tons of features, mega-effects or super options. It's a simple grid with a few predefined blocks. And it provides a simple filter for the creation of new blocks. Unannounced pull requests generally not welcome, I maintain this repo as my own page builder. But feel free to open issues to discuss first: the idea is to keep this page builder as simple as possible.
