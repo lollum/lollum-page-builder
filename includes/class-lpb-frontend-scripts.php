@@ -36,11 +36,17 @@ class LPB_Frontend_Scripts {
 	public function frontend_scripts() {
 		if ( is_page() ) {
 			if ( get_post_meta( get_the_ID(), '_lollum_page_builder_has_blocks', true ) ) {
-				wp_enqueue_style( 'lollum-page-builder', LPB_PLUGIN_URL . 'assets/css/lollum-page-builder.css', array(), LPB_VERSION );
-				wp_enqueue_style( 'font-awesome', LPB_PLUGIN_URL . 'assets/css/font-awesome.min.css', array(), '4.6.3' );
-				wp_enqueue_style( 'simple-line-icons', LPB_PLUGIN_URL . 'assets/css/simple-line-icons.min.css', array(), '2.2.4' );
+				// Allow developers to use their own CSS
+				if ( apply_filters( 'lollum_page_builder_enqueue_styles', true ) ) {
+					wp_enqueue_style( 'lollum-page-builder', LPB_PLUGIN_URL . 'assets/css/lollum-page-builder.css', array(), LPB_VERSION );
+					wp_enqueue_style( 'font-awesome', LPB_PLUGIN_URL . 'assets/css/font-awesome.min.css', array(), '4.6.3' );
+					wp_enqueue_style( 'simple-line-icons', LPB_PLUGIN_URL . 'assets/css/simple-line-icons.min.css', array(), '2.2.4' );
+				}
 
-				wp_enqueue_script( 'lollum-page-builder', LPB_PLUGIN_URL . 'assets/js/frontend/lollum-page-builder.min.js', array( 'jquery' ), LPB_VERSION, true );
+				// Use minified libraries if SCRIPT_DEBUG is turned off
+				$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+				wp_enqueue_script( 'lollum-page-builder', LPB_PLUGIN_URL . 'assets/js/frontend/lollum-page-builder' . $suffix . '.js', array( 'jquery' ), LPB_VERSION, true );
 			}
 		}
 	}
@@ -67,8 +73,8 @@ class LPB_Frontend_Scripts {
 					float: left;
 					padding-left: 15px;
 					padding-right: 15px;
-				}	
-					
+				}
+
 				.lpb-col-1 {
 					width: 8.333333333333332%;
 				}
@@ -113,9 +119,11 @@ class LPB_Frontend_Scripts {
 				}
 
 				.lpb-col-12 {
-					//padding-left: 15px;
-					//padding-right: 15px;
 					width: 100%;
+				}
+
+				.lpb-section > .lpb-page-row:last-child .lpb-page-item {
+					margin-bottom: 0;
 				}
 			}
 		";
@@ -137,7 +145,7 @@ class LPB_Frontend_Scripts {
 		";
 
 		wp_add_inline_style( 'lollum-page-builder', $css );
-	}	
+	}
 }
 
 endif;
