@@ -119,6 +119,15 @@ class LPB_Blocks {
 							'no-gap'        => esc_html__( 'No gap', 'lollum-page-builder' ),
 						),
 					),
+					'equal-height' => array(
+						'label'       => esc_html__( 'Equal height?', 'lollum-page-builder' ),
+						'description' => esc_html__( 'If selected, inner columns will have the same height', 'lollum-page-builder' ),
+						'type'        => 'select',
+                        'options'     => array(
+                            'no'  => esc_html__( 'No', 'lollum-page-builder' ),
+							'yes' => esc_html__( 'Yes', 'lollum-page-builder' ),
+						),
+					),
 					'padding-top' => array(
 						'label'   => esc_html__( 'Padding top?', 'lollum-page-builder' ),
 						'type'    => 'select',
@@ -189,13 +198,16 @@ class LPB_Blocks {
 						'label' => esc_html__( 'Text', 'lollum-page-builder' ),
 						'type'  => 'editor',
 					),
-					'transparent' => array(
-						'label'       => esc_html__( 'Transparent', 'lollum-page-builder' ),
-						'type'        => 'select',
-						'options'     => array(
-							'yes' => esc_html__( 'Yes', 'lollum-page-builder' ),
-							'no'  => esc_html__( 'No', 'lollum-page-builder' ),
-						),
+					'bg-color' => array(
+						'label' => esc_html__( 'Background color', 'lollum-page-builder' ),
+						'type'  => 'color',
+						'std'   => '',
+					),
+					'column-padding' => array(
+						'label'       => esc_html__( 'Column padding', 'lollum-page-builder' ),
+						'description' => esc_html__( 'The padding of the column in px', 'lollum-page-builder' ),
+						'type'        => 'number',
+						'std'         => 0
 					),
 				),
 			),

@@ -13,10 +13,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$transparent = $lpb_data[ 'transparent' ] == 'yes' ? 'transparent-yes' : 'transparent-no';
-$content     = wp_kses_post( $lpb_data[ 'content' ] );
+$bg      = $lpb_data[ 'bg-color' ] ? $lpb_data[ 'bg-color' ] : false;
+$padding = $lpb_data[ 'column-padding' ] ? $lpb_data[ 'column-padding' ] : false;
+$content = wp_kses_post( $lpb_data[ 'content' ] );
+$style   = '';
+
+if ( $bg || $padding ) {
+	$style = 'style="';
+
+	if ( $bg ) {
+		$style .=  'background-color:' . esc_attr( $bg ) . ';';
+	}
+
+	if ( $padding ) {
+		$style .=  'padding:' . esc_attr( $padding ) . 'px;';
+	}
+
+	$style .= '"';
+}
 ?>
 
-<div class="lpb-item-column <?php echo esc_attr( $transparent ); ?>">
+<div class="lpb-item-column" <?php echo $style; // WPCS: XSS ok, sanitization ok. ?>>
 	<div class="lpb-item-content"><?php echo do_shortcode( wpautop( $content ) ); ?></div>
 </div>

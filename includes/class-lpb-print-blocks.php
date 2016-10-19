@@ -269,6 +269,10 @@ class LPB_Print_Blocks {
 					$class .= ' columns-gap-' . $columns_gap;
 				}
 
+				if ( isset( $options[ 'equal-height' ] ) && ( $equal_height = lpb_find_xml_value( $item, 'equal-height' ) ) ) {
+					$class .= ' equal-height-' . $equal_height;
+				}
+
 				if ( isset( $options[ 'padding-top' ] ) && ( $padding_top = lpb_find_xml_value( $item, 'padding-top' ) ) ) {
 					$class .= ' padding-top-' . $padding_top;
 				}
