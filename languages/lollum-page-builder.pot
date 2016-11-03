@@ -428,6 +428,6 @@ msgstr ""
 msgid "You can add a custom ID and refer to it in your custom CSS"
 msgstr ""
 
-#: lollum-page-builder.php:64, lollum-page-builder.php:71
+#: lollum-page-builder.php:75, lollum-page-builder.php:82
 msgid "Cheatin&#8217; huh?"
 msgstr ""

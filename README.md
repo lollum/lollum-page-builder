@@ -6,7 +6,11 @@ The Lollum Page Builder plugin is a simple page builder meant for developers. It
 
 ## Usage
 
+<<<<<<< HEAD
 To add a new custom block:
+=======
+To add a new block:
+>>>>>>> 0d57273f9fe65376add00d5030ade44daaafa570
 
 ```php
 <?php
@@ -45,6 +49,7 @@ function custom_new_blocks( $blocks ) {
 add_filter( 'lollum_page_builder_blocks', 'custom_new_blocks' );
 ```
 
+<<<<<<< HEAD
 To hide the page builder settings page:
 
 1. Declare the page builder support in your theme:
@@ -70,6 +75,8 @@ update_option( 'lpb_options', $options );
 
 Attach the page builder support (1) and the default options (2) to the `after_setup_theme` hook.
 
+=======
+>>>>>>> 0d57273f9fe65376add00d5030ade44daaafa570
 ## Options
 
 ### id
