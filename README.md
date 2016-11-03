@@ -160,7 +160,7 @@ Available types and specific settings:
 - **multiple** (`String`, "true" or "false")
 
 ## Templates
-The plugin looks in `lollum-page-builder/templates/block-id.php` or in `yourtheme/lollum-page-builder/block-id.php` to load the block template. The `$lpb_data` variable is passed to each template. You can get the value of each option with `$lpb_data[ name-of-the-option ]`.
+The plugin looks in `lollum-page-builder/templates/block-id.php` or in `yourtheme/lollum-page-builder/block-id.php` to load the block template. The `$lpb_data` variable is passed to each template. You can get the value of each option with `$lpb_data[ 'name-of-the-option' ]`.
 
 ## Can I use this plugin with other themes, premium or free?
 Yes.
