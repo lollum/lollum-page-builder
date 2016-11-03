@@ -1,9 +1,10 @@
+
 <?php
 /**
  * Plugin Name:       Lollum Page Builder
  * Plugin URI:        http://lollum.com/
  * Description:       A simple and lightweight page builder for developers.
- * Version:           2.0.1
+ * Version:           2.1.0
  * Author:            Lollum
  * Author URI:        http://lollum.com/
  * Requires at least: 4.1
@@ -32,7 +33,7 @@ final class Lollum_Page_Builder {
 	/**
 	 * @var string
 	 */
-	public $version = '2.0.1';
+	public $version = '2.1.0';
 
 	/**
 	 * @var Lollum_Page_Builder The single instance of the class
@@ -152,7 +153,6 @@ final class Lollum_Page_Builder {
 
 		if ( is_admin() ) {
 			include_once LPB_PLUGIN_DIR . 'includes/admin/class-lpb-admin.php';
-			include_once LPB_PLUGIN_DIR . 'includes/admin/class-lpb-admin-settings.php';
 			include_once LPB_PLUGIN_DIR . 'includes/admin/class-lpb-edit-block.php';
 			include_once LPB_PLUGIN_DIR . 'includes/admin/class-lpb-metaboxes.php';
 			include_once LPB_PLUGIN_DIR . 'includes/admin/class-lpb-admin-scripts.php';
@@ -186,6 +186,11 @@ final class Lollum_Page_Builder {
 
 		// Init action
 		do_action( 'lollum_page_builder_init' );
+
+		// Hide page builder settings if a theme declares the page builder support
+		if ( ! current_theme_supports( 'lollum-page-builder-theme' ) ) {
+			include_once LPB_PLUGIN_DIR . 'includes/admin/class-lpb-admin-settings.php';
+		}
 	}
 
 	/**
