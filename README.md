@@ -49,24 +49,24 @@ To hide the page builder settings page:
 
 1. Declare the page builder support in your theme:
 
-```php
-add_theme_support( 'lollum-page-builder-theme' );
-```
+	```php
+	add_theme_support( 'lollum-page-builder-theme' );
+	```
 
 2. Then pass your preferred default values with:
 
-```php
-$options = array(
-	'mobile_breakpoint' => 600,
-	'boxed_width' => 830,
-	'cpt' => array(
-		'page',
-		'post'
-	),
-);
+	```php
+	$options = array(
+		'mobile_breakpoint' => 600,
+		'boxed_width' => 830,
+		'cpt' => array(
+			'page',
+			'post'
+		),
+	);
 
-update_option( 'lpb_options', $options );
-```
+	update_option( 'lpb_options', $options );
+	```
 
 Attach the page builder support (1) and the default options (2) to the `after_setup_theme` hook.
 
