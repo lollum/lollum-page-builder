@@ -1,17 +1,10 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 0d57273f9fe65376add00d5030ade44daaafa570
 <?php
 /**
  * Plugin Name:       Lollum Page Builder
  * Plugin URI:        http://lollum.com/
  * Description:       A simple and lightweight page builder for developers.
-<<<<<<< HEAD
  * Version:           2.1.0
-=======
- * Version:           2.0.1
->>>>>>> 0d57273f9fe65376add00d5030ade44daaafa570
  * Author:            Lollum
  * Author URI:        http://lollum.com/
  * Requires at least: 4.1
@@ -40,11 +33,7 @@ final class Lollum_Page_Builder {
 	/**
 	 * @var string
 	 */
-<<<<<<< HEAD
 	public $version = '2.1.0';
-=======
-	public $version = '2.0.1';
->>>>>>> 0d57273f9fe65376add00d5030ade44daaafa570
 
 	/**
 	 * @var Lollum_Page_Builder The single instance of the class
@@ -164,10 +153,6 @@ final class Lollum_Page_Builder {
 
 		if ( is_admin() ) {
 			include_once LPB_PLUGIN_DIR . 'includes/admin/class-lpb-admin.php';
-<<<<<<< HEAD
-=======
-			include_once LPB_PLUGIN_DIR . 'includes/admin/class-lpb-admin-settings.php';
->>>>>>> 0d57273f9fe65376add00d5030ade44daaafa570
 			include_once LPB_PLUGIN_DIR . 'includes/admin/class-lpb-edit-block.php';
 			include_once LPB_PLUGIN_DIR . 'includes/admin/class-lpb-metaboxes.php';
 			include_once LPB_PLUGIN_DIR . 'includes/admin/class-lpb-admin-scripts.php';
@@ -201,14 +186,11 @@ final class Lollum_Page_Builder {
 
 		// Init action
 		do_action( 'lollum_page_builder_init' );
-<<<<<<< HEAD
 
 		// Hide page builder settings if a theme declares the page builder support
 		if ( ! current_theme_supports( 'lollum-page-builder-theme' ) ) {
 			include_once LPB_PLUGIN_DIR . 'includes/admin/class-lpb-admin-settings.php';
 		}
-=======
->>>>>>> 0d57273f9fe65376add00d5030ade44daaafa570
 	}
 
 	/**

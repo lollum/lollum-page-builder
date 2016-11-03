@@ -1,11 +1,7 @@
 {
   "name": "lollum-page-builder",
   "description": "A simple and lightweight page builder for developers.",
-<<<<<<< HEAD
   "version": "2.1.0",
-=======
-  "version": "2.0.1",
->>>>>>> 0d57273f9fe65376add00d5030ade44daaafa570
   "homepage": "http://lollum.com/",
   "author": "Lollum (http://lollum.com/)",
   "devDependencies": {
