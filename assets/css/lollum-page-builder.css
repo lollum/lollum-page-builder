@@ -42,11 +42,6 @@
   padding-right: 15px;
 }
 
-.lpb-section.columns-gap-no-gap {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
 .lpb-section.row-stretch-boxed .lpb-page-row,
 .lpb-section.row-stretch-full-boxed .lpb-page-row {
   max-width: 570px;
