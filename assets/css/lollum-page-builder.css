@@ -105,6 +105,7 @@
 .columns-gap-no-gap .lpb-col-10,
 .columns-gap-no-gap .lpb-col-11,
 .columns-gap-no-gap .lpb-col-12 {
+  margin-bottom: 0;
   padding-left: 0;
   padding-right: 0;
 }

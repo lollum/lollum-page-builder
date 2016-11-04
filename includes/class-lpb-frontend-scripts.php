@@ -5,7 +5,7 @@
  * @author   Lollum
  * @category Class
  * @package  Lollum_Page_Builder/Classes
- * @version  1.0.0
+ * @version  2.1.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -27,7 +27,6 @@ class LPB_Frontend_Scripts {
 		// Inline CSS
 		add_action( 'wp_enqueue_scripts', array( $this, 'mobile_breakpoint' ), 11 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'boxed_width' ), 11 );
-
 	}
 
 	/**
@@ -46,7 +45,9 @@ class LPB_Frontend_Scripts {
 				// Use minified libraries if SCRIPT_DEBUG is turned off
 				$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-				wp_enqueue_script( 'lollum-page-builder', LPB_PLUGIN_URL . 'assets/js/frontend/lollum-page-builder' . $suffix . '.js', array( 'jquery' ), LPB_VERSION, true );
+				// Load smartresize in a separate file to avoid double inclusions (it may be loaded by the theme)
+				wp_register_script( 'smartresize', LPB_PLUGIN_URL . 'assets/js/lib/smartresize.min.js', array( 'jquery' ), '1.0.0', true );
+				wp_enqueue_script( 'lollum-page-builder', LPB_PLUGIN_URL . 'assets/js/frontend/lollum-page-builder' . $suffix . '.js', array( 'jquery', 'smartresize' ), LPB_VERSION, true );
 			}
 		}
 	}
