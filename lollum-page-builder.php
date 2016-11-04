@@ -4,7 +4,7 @@
  * Plugin Name:       Lollum Page Builder
  * Plugin URI:        http://lollum.com/
  * Description:       A simple and lightweight page builder for developers.
- * Version:           2.1.0
+ * Version:           2.1.1
  * Author:            Lollum
  * Author URI:        http://lollum.com/
  * Requires at least: 4.1
@@ -33,7 +33,7 @@ final class Lollum_Page_Builder {
 	/**
 	 * @var string
 	 */
-	public $version = '2.1.0';
+	public $version = '2.1.1';
 
 	/**
 	 * @var Lollum_Page_Builder The single instance of the class

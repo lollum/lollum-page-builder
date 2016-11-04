@@ -294,7 +294,7 @@ jQuery(function ($) {
 		};
 
 		$.post(lpb_vars.ajaxurl, post_data, function(res) {
-			if (res === 'page-builder') {
+			if ($.trim(res) === 'page-builder') {
 				show_page_builder();
 			}
 		});
