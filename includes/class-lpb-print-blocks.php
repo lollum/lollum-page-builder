@@ -155,14 +155,14 @@ class LPB_Print_Blocks {
 				$this->full_section = true;
 				switch ($args[ 'stretch' ]) {
 					case 'full':
-					case 'full-default':
-					case 'full-boxed':
+					case 'default':
+					case 'boxed':
 						$row_stretch = 'full';
 
 						break;
 
 					default:
-						$row_stretch = 'default';
+						$row_stretch = 'normal';
 
 						break;
 				}

@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Plugin Name:       Lollum Page Builder
@@ -33,7 +32,7 @@ final class Lollum_Page_Builder {
 	/**
 	 * @var string
 	 */
-	public $version = '2.1.1';
+	public $version = '2.1.2';
 
 	/**
 	 * @var Lollum_Page_Builder The single instance of the class

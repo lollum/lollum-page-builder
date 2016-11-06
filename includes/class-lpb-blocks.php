@@ -102,12 +102,13 @@ class LPB_Blocks {
 						'label'       => esc_html__( 'Row stretch', 'lollum-page-builder' ),
 						'description' => esc_html__( 'Select stretching options for the row and inner blocks. (Please note: full rows may not work properly if the parent container has "overflow: hidden" CSS property).', 'lollum-page-builder' ),
 						'type'        => 'select',
+						'std'         => 'default',
 						'options'     => array(
-							'default'      => esc_html__( 'Default row stretch', 'lollum-page-builder' ),
-							'boxed'        => esc_html__( 'Default row stretch and boxed content', 'lollum-page-builder' ),
-							'full-default' => esc_html__( 'Full row', 'lollum-page-builder' ),
-							'full'         => esc_html__( 'Full row and content', 'lollum-page-builder' ),
-							'full-boxed'   => esc_html__( 'Full row and boxed content', 'lollum-page-builder' ),
+							'default'      => esc_html__( 'Full row', 'lollum-page-builder' ),
+							'full'         => esc_html__( 'Full row and full content', 'lollum-page-builder' ),
+							'boxed'        => esc_html__( 'Full row and boxed content', 'lollum-page-builder' ),
+							'normal'       => esc_html__( 'Same as container', 'lollum-page-builder' ),
+							'normal-boxed' => esc_html__( 'Same as container and boxed content', 'lollum-page-builder' ),
 						),
 					),
 					'columns-gap' => array(

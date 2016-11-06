@@ -43,7 +43,7 @@
 }
 
 .lpb-section.row-stretch-boxed .lpb-page-row,
-.lpb-section.row-stretch-full-boxed .lpb-page-row {
+.lpb-section.row-stretch-normal-boxed .lpb-page-row {
   max-width: 570px;
   margin-left: auto;
   margin-right: auto;
