@@ -167,3 +167,15 @@ function lpb_page_builder_get_option( $key = '', $default = false ) {
 function lpb_page_builder_get_supported_cpts() {
 	return apply_filters( 'lollum_page_builder_supported_cpts', lpb_page_builder_get_option( 'cpt', array( 'page' ) ) );
 }
+
+/**
+ * Add a custom class to the body tag when the page builder is active.
+ */
+function lpb_body_class() {
+	if ( is_singular( lpb_page_builder_get_supported_cpts() ) && get_post_meta( get_the_ID(), '_lollum_page_builder_has_blocks', true ) ) {
+		$classes[] = 'lpb-active';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'lpb_body_class' );

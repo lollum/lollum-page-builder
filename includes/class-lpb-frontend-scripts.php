@@ -33,22 +33,20 @@ class LPB_Frontend_Scripts {
 	 * Enqueue frontend scripts and styles.
 	 */
 	public function frontend_scripts() {
-		if ( is_page() ) {
-			if ( get_post_meta( get_the_ID(), '_lollum_page_builder_has_blocks', true ) ) {
-				// Allow developers to use their own CSS
-				if ( apply_filters( 'lollum_page_builder_enqueue_styles', true ) ) {
-					wp_enqueue_style( 'lollum-page-builder', LPB_PLUGIN_URL . 'assets/css/lollum-page-builder.css', array(), LPB_VERSION );
-					wp_enqueue_style( 'font-awesome', LPB_PLUGIN_URL . 'assets/css/font-awesome.min.css', array(), '4.6.3' );
-					wp_enqueue_style( 'simple-line-icons', LPB_PLUGIN_URL . 'assets/css/simple-line-icons.min.css', array(), '2.2.4' );
-				}
-
-				// Use minified libraries if SCRIPT_DEBUG is turned off
-				$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-
-				// Load smartresize in a separate file to avoid double inclusions (it may be loaded by the theme)
-				wp_register_script( 'smartresize', LPB_PLUGIN_URL . 'assets/js/lib/smartresize.min.js', array( 'jquery' ), '1.0.0', true );
-				wp_enqueue_script( 'lollum-page-builder', LPB_PLUGIN_URL . 'assets/js/frontend/lollum-page-builder' . $suffix . '.js', array( 'jquery', 'smartresize' ), LPB_VERSION, true );
+		if ( is_singular( lpb_page_builder_get_supported_cpts() ) && get_post_meta( get_the_ID(), '_lollum_page_builder_has_blocks', true ) ) {
+			// Allow developers to use their own CSS
+			if ( apply_filters( 'lollum_page_builder_enqueue_styles', true ) ) {
+				wp_enqueue_style( 'lollum-page-builder', LPB_PLUGIN_URL . 'assets/css/lollum-page-builder.css', array(), LPB_VERSION );
+				wp_enqueue_style( 'font-awesome', LPB_PLUGIN_URL . 'assets/css/font-awesome.min.css', array(), '4.6.3' );
+				wp_enqueue_style( 'simple-line-icons', LPB_PLUGIN_URL . 'assets/css/simple-line-icons.min.css', array(), '2.2.4' );
 			}
+
+			// Use minified libraries if SCRIPT_DEBUG is turned off
+			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+			// Load smartresize in a separate file to avoid double inclusions (it may be loaded by the theme)
+			wp_register_script( 'smartresize', LPB_PLUGIN_URL . 'assets/js/lib/smartresize.min.js', array( 'jquery' ), '1.0.0', true );
+			wp_enqueue_script( 'lollum-page-builder', LPB_PLUGIN_URL . 'assets/js/frontend/lollum-page-builder' . $suffix . '.js', array( 'jquery', 'smartresize' ), LPB_VERSION, true );
 		}
 	}
 
