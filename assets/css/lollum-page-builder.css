@@ -110,6 +110,10 @@
   padding-right: 0;
 }
 
+.columns-gap-no-gap img {
+  width: 100%;
+}
+
 .lpb-page-item {
   margin-bottom: 1.75em;
 }
@@ -121,4 +125,20 @@
 .lpb-item-content div:last-child > p:last-child,
 .lpb-item-content > p:last-child {
   margin-bottom: 0;
+}
+
+.lpb-item-image img {
+  vertical-align: middle;
+}
+
+.lpb-item-image.alignment-left {
+  text-align: left;
+}
+
+.lpb-item-image.alignment-right {
+  text-align: right;
+}
+
+.lpb-item-image.alignment-center {
+  text-align: center;
 }
