@@ -27,8 +27,8 @@ var build_files = [
 	'!.sass-cache/**',
 	'!node_modules',
 	'!node_modules/**',
-	'!build',
-	'!build/**',
+	'!dist',
+	'!dist/**',
 	'!.git',
 	'!.git/**',
 	'!package.json',
@@ -43,7 +43,7 @@ var build_files = [
 gulp.task('sass', function() {
 	gulp.src([dirs.css + '*.scss'])
 		.pipe(sass({outputStyle: 'expanded'}))
-		.pipe(autoprefixer(['last 2 versions', 'ie 9', 'ie 8']))
+		.pipe(autoprefixer(['last 2 versions']))
 		.pipe(gcmq())
 		.pipe(gulp.dest(dirs.css))
 		.pipe(livereload());
@@ -86,22 +86,22 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build-clean', function() {
-	del(['build/**/*']);
+	del(['dist/**/*']);
 });
 
 gulp.task('build-copy', function() {
 	return gulp.src(build_files)
-		.pipe(gulp.dest('build/lollum-page-builder'));
+		.pipe(gulp.dest('dist/lollum-page-builder'));
 });
 
 gulp.task('build-zip', function() {
-	return gulp.src('build/**/*')
+	return gulp.src('dist/**/*')
 		.pipe(zip('lollum-page-builder.zip'))
-		.pipe(gulp.dest('build'));
+		.pipe(gulp.dest('dist'));
 });
 
 gulp.task('build-delete', function() {
-	del(['build/**/*', '!build/lollum-page-builder.zip']);
+	del(['dist/**/*', '!dist/lollum-page-builder.zip']);
 });
 
 gulp.task('build', function(callback) {

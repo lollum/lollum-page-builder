@@ -1,6 +1,6 @@
 # Gulp
 /node_modules/
-/build/
+/dist/
 
 # Sass
 .sass-cache/
