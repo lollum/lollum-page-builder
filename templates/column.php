@@ -26,7 +26,7 @@ if ( $bg || $padding ) {
 	}
 
 	if ( $padding ) {
-		$style .=  'padding:' . esc_attr( $padding ) . 'px;';
+		$style .=  'padding:' . esc_attr( $padding ) . ';';
 	}
 
 	$style .= '"';
