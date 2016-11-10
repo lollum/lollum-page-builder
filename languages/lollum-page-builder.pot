@@ -96,311 +96,311 @@ msgstr ""
 msgid "Block settings"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:29
+#: includes/class-lpb-blocks.php:30
 msgid "Open Section"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:30
+#: includes/class-lpb-blocks.php:31
 msgid "Place elements inside the section"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:35, includes/class-lpb-blocks.php:203
+#: includes/class-lpb-blocks.php:36, includes/class-lpb-blocks.php:211
 msgid "Background color"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:40
+#: includes/class-lpb-blocks.php:41
 msgid "Background image"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:44
+#: includes/class-lpb-blocks.php:45
 msgid "Background horizontal position"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:48, includes/class-lpb-blocks.php:274
+#: includes/class-lpb-blocks.php:49, includes/class-lpb-blocks.php:286
 msgid "Left"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:49
+#: includes/class-lpb-blocks.php:50
 msgid "Middle Left"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:50, includes/class-lpb-blocks.php:61, includes/class-lpb-blocks.php:273
+#: includes/class-lpb-blocks.php:51, includes/class-lpb-blocks.php:62, includes/class-lpb-blocks.php:285
 msgid "Center"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:51
+#: includes/class-lpb-blocks.php:52
 msgid "Middle Right"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:52, includes/class-lpb-blocks.php:275
+#: includes/class-lpb-blocks.php:53, includes/class-lpb-blocks.php:287
 msgid "Right"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:56
+#: includes/class-lpb-blocks.php:57
 msgid "Background vertical position"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:60
+#: includes/class-lpb-blocks.php:61
 msgid "Top"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:62
+#: includes/class-lpb-blocks.php:63
 msgid "Bottom"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:66
+#: includes/class-lpb-blocks.php:67
 msgid "Background repeat"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:69
+#: includes/class-lpb-blocks.php:70
 msgid "No-Repeat"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:70
+#: includes/class-lpb-blocks.php:71
 msgid "Repeat"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:71
+#: includes/class-lpb-blocks.php:72
 msgid "Repeat-x"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:72
+#: includes/class-lpb-blocks.php:73
 msgid "Repeat-y"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:76
+#: includes/class-lpb-blocks.php:77
 msgid "Background size"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:79
+#: includes/class-lpb-blocks.php:80
 msgid "Auto"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:80
+#: includes/class-lpb-blocks.php:81
 msgid "Cover"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:81
+#: includes/class-lpb-blocks.php:82
 msgid "Contain"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:85
+#: includes/class-lpb-blocks.php:86
 msgid "Parallax effect?"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:88, includes/class-lpb-blocks.php:128, includes/class-lpb-blocks.php:137, includes/class-lpb-blocks.php:145, includes/class-lpb-blocks.php:153
+#: includes/class-lpb-blocks.php:89, includes/class-lpb-blocks.php:129, includes/class-lpb-blocks.php:138, includes/class-lpb-blocks.php:146, includes/class-lpb-blocks.php:154
 msgid "No"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:89, includes/class-lpb-blocks.php:129, includes/class-lpb-blocks.php:136, includes/class-lpb-blocks.php:144, includes/class-lpb-blocks.php:152
+#: includes/class-lpb-blocks.php:90, includes/class-lpb-blocks.php:130, includes/class-lpb-blocks.php:137, includes/class-lpb-blocks.php:145, includes/class-lpb-blocks.php:153
 msgid "Yes"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:93
+#: includes/class-lpb-blocks.php:94
 msgid "Text color"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:94
+#: includes/class-lpb-blocks.php:95
 msgid "This option defines the style of the child blocks. Select \"Dark\" when the section has a light background or viceversa. "
 msgstr ""
 
-#: includes/class-lpb-blocks.php:97
+#: includes/class-lpb-blocks.php:98
 msgid "Dark"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:98
+#: includes/class-lpb-blocks.php:99
 msgid "Light"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:102
+#: includes/class-lpb-blocks.php:103
 msgid "Row stretch"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:103
+#: includes/class-lpb-blocks.php:104
 msgid "Select stretching options for the row and inner blocks. (Please note: full rows may not work properly if the parent container has \"overflow: hidden\" CSS property)."
 msgstr ""
 
-#: includes/class-lpb-blocks.php:107
+#: includes/class-lpb-blocks.php:108
 msgid "Full row"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:108
+#: includes/class-lpb-blocks.php:109
 msgid "Full row and full content"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:109
+#: includes/class-lpb-blocks.php:110
 msgid "Full row and boxed content"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:110
+#: includes/class-lpb-blocks.php:111
 msgid "Same as container"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:111
+#: includes/class-lpb-blocks.php:112
 msgid "Same as container and boxed content"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:115
+#: includes/class-lpb-blocks.php:116
 msgid "Columns gap"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:116
+#: includes/class-lpb-blocks.php:117
 msgid "Select gap between inner columns"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:119
+#: includes/class-lpb-blocks.php:120
 msgid "Default"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:120
+#: includes/class-lpb-blocks.php:121
 msgid "No gap"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:124
+#: includes/class-lpb-blocks.php:125
 msgid "Equal height?"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:125
+#: includes/class-lpb-blocks.php:126
 msgid "If selected, inner columns will have the same height"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:133
+#: includes/class-lpb-blocks.php:134
 msgid "Padding top?"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:141
+#: includes/class-lpb-blocks.php:142
 msgid "Padding bottom?"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:149
+#: includes/class-lpb-blocks.php:150
 msgid "Margin bottom?"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:160
+#: includes/class-lpb-blocks.php:163
 msgid "Close Section"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:161
+#: includes/class-lpb-blocks.php:164
 msgid "Close the section"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:168
+#: includes/class-lpb-blocks.php:174
 msgid "Empty Column"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:169
+#: includes/class-lpb-blocks.php:175
 msgid "Blank horizontal space"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:184
+#: includes/class-lpb-blocks.php:192
 msgid "Column"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:185
+#: includes/class-lpb-blocks.php:193
 msgid "A block of text (accepts HTML and shortcodes)"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:199, includes/class-lpb-blocks.php:245
+#: includes/class-lpb-blocks.php:207, includes/class-lpb-blocks.php:255
 msgid "Text"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:208
+#: includes/class-lpb-blocks.php:216
 msgid "Column padding"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:209
+#: includes/class-lpb-blocks.php:217
 msgid "The padding of the column (CSS values allowed)"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:217
+#: includes/class-lpb-blocks.php:227
 msgid "Service"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:218
+#: includes/class-lpb-blocks.php:228
 msgid "A text module with titles and icons"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:231
+#: includes/class-lpb-blocks.php:241
 msgid "Title"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:235
+#: includes/class-lpb-blocks.php:245
 msgid "Icon"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:239, includes/class-lpb-blocks.php:279
+#: includes/class-lpb-blocks.php:249, includes/class-lpb-blocks.php:291
 msgid "URL"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:241, includes/class-lpb-blocks.php:281
+#: includes/class-lpb-blocks.php:251, includes/class-lpb-blocks.php:293
 msgid "Add an optional link"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:252
+#: includes/class-lpb-blocks.php:264
 msgid "Single Image"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:253
+#: includes/class-lpb-blocks.php:265
 msgid "A single image"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:266
+#: includes/class-lpb-blocks.php:278
 msgid "Image"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:270
+#: includes/class-lpb-blocks.php:282
 msgid "Alignment"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:287
+#: includes/class-lpb-blocks.php:301
 msgid "Blog Grid"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:288
+#: includes/class-lpb-blocks.php:302
 msgid "A list of posts in grid"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:293
+#: includes/class-lpb-blocks.php:307
 msgid "Number of posts"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:298
+#: includes/class-lpb-blocks.php:312
 msgid "Number of columns"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:303
+#: includes/class-lpb-blocks.php:317
 msgid "Order by?"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:307
+#: includes/class-lpb-blocks.php:321
 msgid "Date"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:308, includes/class-lpb-blocks.php:313
+#: includes/class-lpb-blocks.php:322, includes/class-lpb-blocks.php:327
 msgid "IDs"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:309, includes/class-lpb-blocks.php:319
+#: includes/class-lpb-blocks.php:323, includes/class-lpb-blocks.php:333
 msgid "Category"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:315
+#: includes/class-lpb-blocks.php:329
 msgid "Comma separated list of post IDs"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:321
+#: includes/class-lpb-blocks.php:335
 msgid "The slug of the category"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:331
+#: includes/class-lpb-blocks.php:347
 msgid "Revolution Slider"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:332
+#: includes/class-lpb-blocks.php:348
 msgid "Place a slider"
 msgstr ""
 
-#: includes/class-lpb-blocks.php:346
+#: includes/class-lpb-blocks.php:362
 msgid "Select slider"
 msgstr ""
 
