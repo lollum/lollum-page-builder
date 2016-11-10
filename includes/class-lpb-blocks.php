@@ -24,7 +24,7 @@ class LPB_Blocks {
 	 */
 	public static function blocks() {
 		$blocks = array(
-			'section-open' => apply_filters( 'lpb_block_section_open',
+			'section-open' => apply_filters( 'lollum_page_builder_block_section_open',
 				array(
 					'id'           => 'section-open',
 					'name'         => esc_html__( 'Open Section', 'lollum-page-builder' ),
@@ -157,7 +157,7 @@ class LPB_Blocks {
 					)
 				)
 			),
-			'section-close' => apply_filters( 'lpb_block_section_close',
+			'section-close' => apply_filters( 'lollum_page_builder_block_section_close',
 				array(
 					'id'           => 'section-close',
 					'name'         => esc_html__( 'Close Section', 'lollum-page-builder' ),
@@ -168,7 +168,7 @@ class LPB_Blocks {
 
 				)
 			),
-			'empty-column' => apply_filters( 'lpb_block_empty_column',
+			'empty-column' => apply_filters( 'lollum_page_builder_block_empty_column',
 				array(
 					'id'           => 'empty-column',
 					'name'         => esc_html__( 'Empty Column', 'lollum-page-builder' ),
@@ -186,7 +186,7 @@ class LPB_Blocks {
 					'custom-id'    => false,
 				)
 			),
-			'column' => apply_filters( 'lpb_block_column',
+			'column' => apply_filters( 'lollum_page_builder_block_column',
 				array(
 					'id'           => 'column',
 					'name'         => esc_html__( 'Column', 'lollum-page-builder' ),
@@ -221,7 +221,7 @@ class LPB_Blocks {
 					),
 				)
 			),
-			'service' => apply_filters( 'lpb_block_service',
+			'service' => apply_filters( 'lollum_page_builder_block_service',
 				array(
 					'id'           => 'service',
 					'name'         => esc_html__( 'Service', 'lollum-page-builder' ),
@@ -258,7 +258,7 @@ class LPB_Blocks {
 					),
 				)
 			),
-			'image' => apply_filters( 'lpb_block_image',
+			'image' => apply_filters( 'lollum_page_builder_block_image',
 				array(
 					'id'           => 'image',
 					'name'         => esc_html__( 'Single Image', 'lollum-page-builder' ),
@@ -295,7 +295,7 @@ class LPB_Blocks {
 					),
 				)
 			),
-			'blog' => apply_filters( 'lpb_block_blog',
+			'blog' => apply_filters( 'lollum_page_builder_block_blog',
 				array(
 					'id'           => 'blog',
 					'name'         => esc_html__( 'Blog Grid', 'lollum-page-builder' ),
@@ -341,7 +341,7 @@ class LPB_Blocks {
 		);
 
 		if ( in_array( 'revslider/revslider.php', get_option( 'active_plugins' ) ) ) {
-			$blocks[ 'revslider' ] = apply_filters( 'lpb_block_revslider',
+			$blocks[ 'revslider' ] = apply_filters( 'lollum_page_builder_block_revslider',
 				array(
 					'id'           => 'revslider',
 					'name'         => esc_html__( 'Revolution Slider', 'lollum-page-builder' ),
