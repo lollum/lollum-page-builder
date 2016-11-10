@@ -309,7 +309,7 @@ msgid "Column padding"
 msgstr ""
 
 #: includes/class-lpb-blocks.php:209
-msgid "The padding of the column in px"
+msgid "The padding of the column (CSS values allowed)"
 msgstr ""
 
 #: includes/class-lpb-blocks.php:217

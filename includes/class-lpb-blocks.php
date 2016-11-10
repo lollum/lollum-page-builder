@@ -206,8 +206,8 @@ class LPB_Blocks {
 					),
 					'column-padding' => array(
 						'label'       => esc_html__( 'Column padding', 'lollum-page-builder' ),
-						'description' => esc_html__( 'The padding of the column in px', 'lollum-page-builder' ),
-						'type'        => 'number',
+						'description' => esc_html__( 'The padding of the column (CSS values allowed)', 'lollum-page-builder' ),
+						'type'        => 'text',
 						'std'         => 0
 					),
 				),

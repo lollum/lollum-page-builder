@@ -235,7 +235,6 @@
   text-align: center;
   text-transform: uppercase;
   top: 50%;
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
