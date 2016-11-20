@@ -839,12 +839,12 @@
 }
 
 #page-builder-actions button:hover {
-  background-color: #4f5f6f !important;
+  background-color: #4f5f6f;
   cursor: pointer;
 }
 
 #page-builder-actions button:disabled {
-  background-color: #f7f9fa;
+  background-color: #f7f9fa !important;
   color: #b6bdc3;
 }
 
@@ -858,6 +858,10 @@
 
 #page-builder-actions #delete-all-blocks {
   background-color: #de5e36;
+}
+
+#page-builder-actions #delete-all-blocks:hover {
+  background-color: #C75430;
 }
 
 .lpb-enabled #local-storage-notice {

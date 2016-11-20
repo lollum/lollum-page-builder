@@ -808,12 +808,12 @@ $border: #e3e5e6;
 		padding: 5px 15px;
 
 		&:hover {
-			background-color: $blue !important;
+			background-color: $blue;
 			cursor: pointer;
 		}
 
 		&:disabled {
-			background-color: $light;
+			background-color: $light !important;
 			color: $grey;
 
 			&:hover {
@@ -828,11 +828,14 @@ $border: #e3e5e6;
 
 	#delete-all-blocks {
 		background-color: #de5e36;
+
+		&:hover {
+			background-color: #C75430;
+		}
 	}
 }
 
 .lpb-enabled #local-storage-notice {
 	display: none !important;
 }
-
 

@@ -10,6 +10,7 @@ jQuery(function ($) {
 	var grid_container = $('#grid-blocks');
 	var empty_message = grid_container.find('.empty');
 	var delete_all_blocks = $('#delete-all-blocks');
+	var copy_blocks = $('#copy-blocks');
 	var item_header = $('.page-item-header');
 	var delete_button = item_header.find('.delete-item');
 	var open_box = item_header.find('.edit-item-btn');
@@ -850,6 +851,7 @@ jQuery(function ($) {
 
 		empty_message.hide();
 		delete_all_blocks.prop('disabled', false);
+		copy_blocks.prop('disabled', false);
 
 		if (item_cloned) {
 			// add content block only once
@@ -931,6 +933,7 @@ jQuery(function ($) {
 				if (count_blocks < 2) {
 					empty_message.show();
 					delete_all_blocks.prop('disabled', true);
+					copy_blocks.prop('disabled', true);
 				}
 			});
 		}
@@ -948,6 +951,7 @@ jQuery(function ($) {
 				empty_message.show();
 				content_block_added = false;
 				delete_all_blocks.prop('disabled', true);
+				copy_blocks.prop('disabled', true);
 			});
 		}
 	});
@@ -1175,12 +1179,16 @@ jQuery(function ($) {
 	});
 
 	// copy blocks
-	$('#copy-blocks').on('click', function(){
-		show_copy_modal('<xml-tag><column><custom-id><![CDATA[]]></custom-id><content><![CDATA[Lorem ipsum dolor sit amet, usu ex augue indoctum ullamcorper. No feugait repudiare consetetur usu, fierent mnesarchum te vis. Te ancillae eleifend petentium pro, ad falli facilis est, ad sit probo ubique conclusionemque. Pericula persecuti sea te. At tantas repudiare duo, ne nec nostro iriure. Vix augue sapientem an. An probo accusam ius, pri nostrum facilisis no.]></content><bg-color><![CDATA[]]></bg-color><column-padding><![CDATA[]]></column-padding><size>1-2</size></column><column><custom-id><![CDATA[]]></custom-id><content><![CDATA[Lorem ipsum dolor sit amet, usu ex augue indoctum ullamcorper. No feugait repudiare consetetur usu, fierent mnesarchum te vis. Te ancillae eleifend petentium pro, ad falli facilis est, ad sit probo ubique conclusionemque. Pericula persecuti sea te. At tantas repudiare duo, ne nec nostro iriure. Vix augue sapientem an. An probo accusam ius, pri nostrum facilisis no.]></content><bg-color><![CDATA[]]></bg-color><column-padding><![CDATA[]]></column-padding><size>1-2</size></column></xml-tag>');
+	copy_blocks.on('click', function() {
+		// get xml data
+		var data = '<xml-tag>' + get_xml() + '</xml-tag>';
+
+		// show modal
+		show_copy_modal(data);
 	});
 
 	// hide/show blog block options on change
-	grid_container.on('change', 'select.blog-order', function(){
+	grid_container.on('change', 'select.blog-order', function() {
 		var _this = $(this);
 		var container = _this.closest('.settings');
 		var ids_field = container.find('.blog-order-ids');
@@ -1254,6 +1262,20 @@ jQuery(function ($) {
 	// build tag xml escape
 	function tag_xml_esc(type, value) {
 		return '<'+type+'><![CDATA['+value+']]></'+type+'>';
+	}
+
+	// get complete xml string
+	function get_xml() {
+		do_xml();
+
+		var data = '';
+		var inputs = grid_container.find('input.item-xml');
+
+		inputs.each(function() {
+			data += $(this).val();
+		});
+
+		return data;
 	}
 
 	// clone wp_editor
@@ -1456,3 +1478,4 @@ jQuery(function ($) {
 
 
 });
+
