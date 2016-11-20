@@ -1167,18 +1167,16 @@ jQuery(function ($) {
 
 	// save xml items
 	$('#publish, #save-post').on('click', function(){
-		var items_collection = grid_container.find('.page-item');
-		var check_js = $('#check-js');
+		// JS check
+		$('#check-js').val('js');
 
-		items_collection.each(function() {
-			var _this = $(this);
-			var item_type = _this.attr('data-type');
-			var type_collection = $('.item-'+item_type);
+		// generate the XML
+		do_xml();
+	});
 
-			populate_xml(type_collection, item_type);
-		});
-
-		check_js.val('js');
+	// copy blocks
+	$('#copy-blocks').on('click', function(){
+		show_copy_modal('<xml-tag><column><custom-id><![CDATA[]]></custom-id><content><![CDATA[Lorem ipsum dolor sit amet, usu ex augue indoctum ullamcorper. No feugait repudiare consetetur usu, fierent mnesarchum te vis. Te ancillae eleifend petentium pro, ad falli facilis est, ad sit probo ubique conclusionemque. Pericula persecuti sea te. At tantas repudiare duo, ne nec nostro iriure. Vix augue sapientem an. An probo accusam ius, pri nostrum facilisis no.]></content><bg-color><![CDATA[]]></bg-color><column-padding><![CDATA[]]></column-padding><size>1-2</size></column><column><custom-id><![CDATA[]]></custom-id><content><![CDATA[Lorem ipsum dolor sit amet, usu ex augue indoctum ullamcorper. No feugait repudiare consetetur usu, fierent mnesarchum te vis. Te ancillae eleifend petentium pro, ad falli facilis est, ad sit probo ubique conclusionemque. Pericula persecuti sea te. At tantas repudiare duo, ne nec nostro iriure. Vix augue sapientem an. An probo accusam ius, pri nostrum facilisis no.]></content><bg-color><![CDATA[]]></bg-color><column-padding><![CDATA[]]></column-padding><size>1-2</size></column></xml-tag>');
 	});
 
 	// hide/show blog block options on change
@@ -1201,6 +1199,19 @@ jQuery(function ($) {
 	});
 
 	hide_show_blog_options();
+
+	// for each block, store the data in a hidden input
+	function do_xml() {
+		var items_collection = grid_container.find('.page-item');
+
+		items_collection.each(function() {
+			var _this = $(this);
+			var item_type = _this.attr('data-type');
+			var type_collection = $('.item-'+item_type);
+
+			populate_xml(type_collection, item_type);
+		});
+	}
 
 	// build xml
 	function populate_xml(items, item){
@@ -1400,4 +1411,48 @@ jQuery(function ($) {
 			});
 		}
 	}
+
+	// show and create copy blocks modal
+	function show_copy_modal(val) {
+		var body = document.getElementsByTagName('body')[0];
+
+		// modal overlay
+		var obfuscator = _doc.createElement('div');
+		obfuscator.id = 'lpb-copy-paste-obfuscator';
+		_html.appendChild(obfuscator);
+
+		// create modal
+		var modal = _doc.createElement('div');
+		modal.id = 'lpb-copy-blocks-modal';
+		body.appendChild(modal);
+
+		// close button
+		var close_button = _doc.createElement('div');
+		close_button.id = 'lpb-close-copy-blocks-modal';
+		close_button.innerHTML = '<i class="fa fa-remove"></i>';
+		modal.appendChild(close_button);
+
+		// modal description
+		var desc = _doc.createElement('p');
+		desc.innerHTML = lpb_admin_vars.copy_blocks_description;
+		modal.appendChild(desc);
+
+		// textarea
+		var textarea = _doc.createElement('textarea');
+		textarea.rows = 10;
+		textarea.value = val;
+		modal.appendChild(textarea);
+
+		obfuscator.addEventListener('click', close_copy_modal);
+		close_button.addEventListener('click', close_copy_modal);
+
+		// close copy blocks modal
+		function close_copy_modal() {
+			obfuscator.remove();
+			close_button.remove();
+			modal.remove();
+		}
+	}
+
+
 });

@@ -95,6 +95,7 @@ $border: #e3e5e6;
 	}
 }
 
+#lpb-copy-blocks-modal,
 .lpb-dialog {
 	background-color: #fff;
 	box-shadow: 0 3px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
@@ -116,6 +117,7 @@ $border: #e3e5e6;
 }
 
 /* created with JS dynamically */
+#lpb-copy-paste-obfuscator,
 #lpb-dialog-obfuscator {
 	background-color: #111;
 	bottom: 0;
@@ -127,6 +129,41 @@ $border: #e3e5e6;
 	right: 0;
 	top: 0;
 	z-index: 1001;
+}
+
+#lpb-copy-blocks-modal {
+	textarea {
+		display: block;
+		width: 100%;
+		color: $grey;
+	}
+
+	#lpb-close-copy-blocks-modal {
+		background-color: #59c2e6;
+		color: #fff;
+		display: block;
+		font-size: 16px;
+		height: 30px;
+		line-height: 30px;
+		position: absolute;
+		right: 10px;
+		text-align: center;
+		top: 10px;
+		width: 30px;
+
+		&:hover {
+			@include transition;
+			background-color: $blue;
+			cursor: pointer;
+		}
+	}
+
+	p {
+		display: block;
+		font-size: 13px;
+		font-style: italic;
+		padding-right: 2em;
+	}
 }
 
 #lollum-page-builder {
@@ -761,35 +798,41 @@ $border: #e3e5e6;
 #page-builder-actions {
 	margin-bottom: 1.5em;
 	text-align: right;
-}
 
-#delete-all-blocks {
-	@include transition;
-	background-color: #59c2e6;
-	border: none;
-	color: #fff;
-	font-size: 11px;
-	padding: 5px 15px;
-
-	&:hover {
-		background-color: $blue;
-		cursor: pointer;
-	}
-
-	&:disabled {
-		background-color: $light;
-		color: $grey;
+	button {
+		@include transition;
+		background-color: #59c2e6;
+		border: none;
+		color: #fff;
+		font-size: 11px;
+		padding: 5px 15px;
 
 		&:hover {
-			cursor: default;
+			background-color: $blue !important;
+			cursor: pointer;
+		}
+
+		&:disabled {
+			background-color: $light;
+			color: $grey;
+
+			&:hover {
+				cursor: default;
+			}
+		}
+
+		.fa {
+			margin-right: 10px;
 		}
 	}
 
-	.fa {
-		margin-right: 10px;
+	#delete-all-blocks {
+		background-color: #de5e36;
 	}
 }
 
 .lpb-enabled #local-storage-notice {
 	display: none !important;
 }
+
+

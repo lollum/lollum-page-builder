@@ -42,6 +42,10 @@ class LPB_Meta_Box_Blocks {
 			<?php if ( class_exists( 'DOMDocument' ) ) : ?>
 
 				<div id="page-builder-actions">
+					<button type="button" id="copy-blocks" <?php echo $xml ? '' : 'disabled'; ?>><i class="fa fa-copy"></i><?php esc_html_e( 'Copy blocks', 'lollum-page-builder' ); ?></button>
+
+					<button type="button" id="paste-blocks"><i class="fa fa-paste"></i><?php esc_html_e( 'Paste blocks', 'lollum-page-builder' ); ?></button>
+
 					<button type="button" id="delete-all-blocks" <?php echo $xml ? '' : 'disabled'; ?>><i class="fa fa-remove"></i><?php esc_html_e( 'Delete all blocks', 'lollum-page-builder' ); ?></button>
 				</div>
 

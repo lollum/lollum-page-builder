@@ -59,6 +59,7 @@
   display: none !important;
 }
 
+#lpb-copy-blocks-modal,
 .lpb-dialog {
   background-color: #fff;
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
@@ -74,6 +75,7 @@
 
 /* created with JS dynamically */
 
+#lpb-copy-paste-obfuscator,
 #lpb-dialog-obfuscator {
   background-color: #111;
   bottom: 0;
@@ -85,6 +87,41 @@
   right: 0;
   top: 0;
   z-index: 1001;
+}
+
+#lpb-copy-blocks-modal textarea {
+  display: block;
+  width: 100%;
+  color: #b6bdc3;
+}
+
+#lpb-copy-blocks-modal #lpb-close-copy-blocks-modal {
+  background-color: #59c2e6;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  top: 10px;
+  width: 30px;
+}
+
+#lpb-copy-blocks-modal #lpb-close-copy-blocks-modal:hover {
+  transition-duration: 0.2s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #4f5f6f;
+  cursor: pointer;
+}
+
+#lpb-copy-blocks-modal p {
+  display: block;
+  font-size: 13px;
+  font-style: italic;
+  padding-right: 2em;
 }
 
 #lollum-page-builder {
@@ -790,7 +827,7 @@
   text-align: right;
 }
 
-#delete-all-blocks {
+#page-builder-actions button {
   transition-duration: 0.2s;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -801,22 +838,26 @@
   padding: 5px 15px;
 }
 
-#delete-all-blocks:hover {
-  background-color: #4f5f6f;
+#page-builder-actions button:hover {
+  background-color: #4f5f6f !important;
   cursor: pointer;
 }
 
-#delete-all-blocks:disabled {
+#page-builder-actions button:disabled {
   background-color: #f7f9fa;
   color: #b6bdc3;
 }
 
-#delete-all-blocks:disabled:hover {
+#page-builder-actions button:disabled:hover {
   cursor: default;
 }
 
-#delete-all-blocks .fa {
+#page-builder-actions button .fa {
   margin-right: 10px;
+}
+
+#page-builder-actions #delete-all-blocks {
+  background-color: #de5e36;
 }
 
 .lpb-enabled #local-storage-notice {
@@ -824,6 +865,7 @@
 }
 
 @media (min-width: 768px) {
+  #lpb-copy-blocks-modal,
   .lpb-dialog {
     left: 50%;
     margin-left: -335px;

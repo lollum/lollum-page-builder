@@ -44,6 +44,18 @@ msgstr ""
 msgid "Are you sure you want to remove this block?"
 msgstr ""
 
+#: includes/admin/class-lpb-admin-scripts.php:63
+msgid "Append blocks"
+msgstr ""
+
+#: includes/admin/class-lpb-admin-scripts.php:64
+msgid "To reuse these blocks in another page copy this value to the clipboard. Then use the \"Paste blocks\" button (in the other page) to import the data."
+msgstr ""
+
+#: includes/admin/class-lpb-admin-scripts.php:65
+msgid "To import the blocks of another page use the \"Copy blocks\" button (in the other page) and paste here the data."
+msgstr ""
+
 #: includes/admin/class-lpb-admin-settings.php:42
 msgid "Settings"
 msgstr ""
@@ -81,14 +93,22 @@ msgid "The max width of the content when using a \"Default row stretch and boxed
 msgstr ""
 
 #: includes/admin/class-lpb-meta-box-blocks.php:45
+msgid "Copy blocks"
+msgstr ""
+
+#: includes/admin/class-lpb-meta-box-blocks.php:47
+msgid "Paste blocks"
+msgstr ""
+
+#: includes/admin/class-lpb-meta-box-blocks.php:49
 msgid "Delete all blocks"
 msgstr ""
 
-#: includes/admin/class-lpb-meta-box-blocks.php:54, includes/class-lpb-print-blocks.php:41
+#: includes/admin/class-lpb-meta-box-blocks.php:58, includes/class-lpb-print-blocks.php:41
 msgid "Please enable the DOM extension in your PHP configuration"
 msgstr ""
 
-#: includes/admin/class-lpb-meta-box-blocks.php:58
+#: includes/admin/class-lpb-meta-box-blocks.php:62
 msgid "Click above to add some blocks"
 msgstr ""
 
