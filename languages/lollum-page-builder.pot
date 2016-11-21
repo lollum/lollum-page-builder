@@ -41,18 +41,26 @@ msgid "Back to WP Editor"
 msgstr ""
 
 #: includes/admin/class-lpb-admin-scripts.php:65
-msgid "Are you sure you want to remove this block?"
+msgid "Export blocks"
 msgstr ""
 
 #: includes/admin/class-lpb-admin-scripts.php:66
-msgid "Append blocks"
+msgid "Import blocks"
 msgstr ""
 
 #: includes/admin/class-lpb-admin-scripts.php:67
-msgid "To reuse these blocks in another page copy this value to the clipboard. Then use the \"Paste blocks\" button (in the other page) to import the data."
+msgid "Are you sure you want to remove this block?"
 msgstr ""
 
 #: includes/admin/class-lpb-admin-scripts.php:68
+msgid "Append blocks"
+msgstr ""
+
+#: includes/admin/class-lpb-admin-scripts.php:69
+msgid "To reuse these blocks in another page copy this value to the clipboard. Then use the \"Paste blocks\" button (in the other page) to import the data."
+msgstr ""
+
+#: includes/admin/class-lpb-admin-scripts.php:70
 msgid "To import the blocks of another page use the \"Copy blocks\" button (in the other page) and paste here the data."
 msgstr ""
 

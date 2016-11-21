@@ -1438,6 +1438,11 @@ jQuery(function ($) {
 		close_button.innerHTML = '<i class="fa fa-remove"></i>';
 		modal.appendChild(close_button);
 
+		// modal title
+		var title = _doc.createElement('h5');
+		title.innerHTML = lpb_admin_vars.copy_blocks_title;
+		modal.appendChild(title);
+
 		// modal description
 		var desc = _doc.createElement('p');
 		desc.innerHTML = lpb_admin_vars.copy_blocks_description;
@@ -1479,6 +1484,11 @@ jQuery(function ($) {
 		close_button.id = 'lpb-close-copy-paste-blocks-modal';
 		close_button.innerHTML = '<i class="fa fa-remove"></i>';
 		modal.appendChild(close_button);
+
+		// modal title
+		var title = _doc.createElement('h5');
+		title.innerHTML = lpb_admin_vars.paste_blocks_title;
+		modal.appendChild(title);
 
 		// modal description
 		var desc = _doc.createElement('p');

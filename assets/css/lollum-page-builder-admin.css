@@ -92,14 +92,22 @@
 #lpb-copy-paste-blocks-modal textarea {
   display: block;
   width: 100%;
-  color: #b6bdc3;
 }
 
 #lpb-copy-paste-blocks-modal p {
+  color: #b6bdc3;
   display: block;
   font-size: 13px;
-  font-style: italic;
   padding-right: 2em;
+}
+
+#lpb-copy-paste-blocks-modal h5 {
+  color: #4f5f6f;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
 }
 
 #lpb-close-copy-paste-blocks-modal {

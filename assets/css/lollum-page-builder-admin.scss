@@ -135,14 +135,22 @@ $border: #e3e5e6;
 	textarea {
 		display: block;
 		width: 100%;
-		color: $grey;
 	}
 
 	p {
+		color: $grey;
 		display: block;
 		font-size: 13px;
-		font-style: italic;
 		padding-right: 2em;
+	}
+
+	h5 {
+		color: #4f5f6f;
+		font-size: 16px;
+		font-weight: 600;
+		margin: 0;
+		padding: 0;
+		text-transform: uppercase;
 	}
 }
 

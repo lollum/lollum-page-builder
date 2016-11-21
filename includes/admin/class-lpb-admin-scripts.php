@@ -62,6 +62,8 @@ class LPB_Admin_Scripts {
 					'ajaxurl'                  => admin_url( 'admin-ajax.php' ),
 					'post_id'                  => absint( $post->ID ),
 					'nonce'                    => wp_create_nonce( 'lpb-append-blocks-nonce' ),
+                    'copy_blocks_title'        => esc_html__( 'Export blocks', 'lollum-page-builder' ),
+                    'paste_blocks_title'       => esc_html__( 'Import blocks', 'lollum-page-builder' ),
                     'delete_block'             => esc_html__( 'Are you sure you want to remove this block?', 'lollum-page-builder' ),
                     'paste_blocks'             => esc_html__( 'Append blocks', 'lollum-page-builder' ),
                     'copy_blocks_description'  => esc_html__( 'To reuse these blocks in another page copy this value to the clipboard. Then use the "Paste blocks" button (in the other page) to import the data.', 'lollum-page-builder' ),
