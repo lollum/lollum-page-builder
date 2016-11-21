@@ -178,6 +178,7 @@ jQuery(function ($) {
 
 		grid_container.find('.empty').hide();
 		$('#delete-all-blocks').prop('disabled', false);
+		$('#copy-blocks').prop('disabled', false);
 
 		if (item_cloned) {
 			item_cloned.find('.item-xml').attr('name', 'item-xml[]');

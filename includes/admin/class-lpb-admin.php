@@ -25,6 +25,7 @@ class LPB_Admin {
 	public static function init() {
 		add_action( 'wp_ajax_lpb_set_editor_type', array( __CLASS__, 'set_editor_type' ) );
 		add_action( 'wp_ajax_lpb_get_editor_type', array( __CLASS__, 'get_editor_type' ) );
+		add_action( 'wp_ajax_lpb_append_blocks', array( __CLASS__, 'append_blocks' ) );
 	}
 
 	/**
@@ -46,6 +47,36 @@ class LPB_Admin {
 	public static function get_editor_type() {
 		if ( isset( $_POST[ 'post_id' ] ) ) {
 			echo get_post_meta( absint( $_POST[ 'post_id' ] ), '_lpb_editor_type', true );
+		}
+
+		die();
+	}
+
+	/**
+	 * Append copied blocks
+	 */
+	public static function append_blocks() {
+		if ( isset( $_POST[ 'blocks_to_append' ] ) && wp_verify_nonce( $_POST[ 'append_blocks_nonce' ], 'lpb-append-blocks-nonce' ) ) {
+			$blocks = lpb_get_blocks();
+
+			if ( $blocks && is_array( $blocks ) ) {
+				$xml = $_POST[ 'blocks_to_append' ];
+
+				if ( $xml ) {
+					$dom     = new DOMDocument();
+					$success = $dom->loadXML( $xml );
+
+					if ( $success ) {
+						foreach ( $dom->documentElement->childNodes as $item ) {
+							$tag = $item->nodeName;
+
+							if ( in_array( $tag, $blocks ) ) {
+								lpb_print_edit_block( $tag, true, $item );
+							}
+						}
+					}
+				}
+			}
 		}
 
 		die();

@@ -11,15 +11,8 @@ jQuery(function ($) {
 	var empty_message = grid_container.find('.empty');
 	var delete_all_blocks = $('#delete-all-blocks');
 	var copy_blocks = $('#copy-blocks');
-	var item_header = $('.page-item-header');
-	var delete_button = item_header.find('.delete-item');
-	var open_box = item_header.find('.edit-item-btn');
-	var add_size = item_header.find('.btn-plus');
-	var sub_size = item_header.find('.btn-minus');
-	var clone_box = item_header.find('.btn-clone');
-	var color_inputs = grid_container.find('.input-color');
+	var paste_blocks = $('#paste-blocks');
 	var last_icon_input_clicked;
-	var content_block_added = false;
 	var item_size = [
 		['item-1-4','1-4'],
 		['item-1-3', '1-3'],
@@ -854,17 +847,8 @@ jQuery(function ($) {
 		copy_blocks.prop('disabled', false);
 
 		if (item_cloned) {
-			// add content block only once
-			if (content_block_added && _this.data('block') === 'page-content') {
-				return;
-			}
-
 			item_cloned.find('.item-xml').attr('name', 'item-xml[]');
 			grid_container.append(item_cloned);
-
-			if (_this.data('block') === 'page-content') {
-				content_block_added = true;
-			}
 
 			var editor = item_cloned.find('textarea.wp-editor-area');
 
@@ -880,7 +864,7 @@ jQuery(function ($) {
 	});
 
 	// open edit box
-	open_box.on('click', function(e){
+	grid_container.on('click', '.edit-item-btn', function(e) {
 		e.preventDefault();
 
 		var obfuscator;
@@ -897,7 +881,7 @@ jQuery(function ($) {
 	});
 
 	// close edit box
-	$(_doc).on('click', '.edit-item-close-btn', function(e){
+	$(_doc).on('click', '.edit-item-close-btn', function(e) {
 		e.preventDefault();
 
 		grid_container.find('.edit-item').hide();
@@ -906,7 +890,7 @@ jQuery(function ($) {
 
 	// close the edit box when the user clicks on the obfuscator
 	// but keep it open if the font-picker modal is open
-	$(_doc).on('click', '#page-builder-obfuscator', function(e){
+	$(_doc).on('click', '#page-builder-obfuscator', function(e) {
 		e.preventDefault();
 
 		if (!$(_html).hasClass('font-picker-modal-open')) {
@@ -916,7 +900,7 @@ jQuery(function ($) {
 	});
 
 	// delete item
-	delete_button.on('click', function(){
+	grid_container.on('click', '.delete-item', function() {
 		var _this = $(this);
 		var item_clicked = _this.parents('.page-item');
 
@@ -924,10 +908,6 @@ jQuery(function ($) {
 			var count_blocks = grid_container.find('.page-item').length;
 
 			item_clicked.fadeOut(function(){
-				if (item_clicked.data('type') === 'page-content') {
-					content_block_added = false;
-				}
-
 				item_clicked.remove();
 
 				if (count_blocks < 2) {
@@ -949,7 +929,6 @@ jQuery(function ($) {
 			blocks.fadeOut(function(){
 				blocks.remove();
 				empty_message.show();
-				content_block_added = false;
 				delete_all_blocks.prop('disabled', true);
 				copy_blocks.prop('disabled', true);
 			});
@@ -957,7 +936,7 @@ jQuery(function ($) {
 	});
 
 	// add size
-	add_size.on('click', function(){
+	grid_container.on('click', '.btn-plus', function() {
 		var _this = $(this);
 		var item_clicked = _this.parents('.page-item');
 		var scalable = false;
@@ -982,7 +961,7 @@ jQuery(function ($) {
 	});
 
 	// sub size
-	sub_size.on('click', function(){
+	grid_container.on('click', '.btn-minus', function() {
 		var _this = $(this);
 		var item_clicked = _this.parents('.page-item');
 		var scalable = false;
@@ -1008,7 +987,7 @@ jQuery(function ($) {
 	});
 
 	// clone item
-	clone_box.on('click', function(){
+	grid_container.on('click', '.btn-clone', function() {
 		var _this = $(this);
 		var item_clicked = _this.parents('.page-item');
 		var item_cloned = item_clicked.clone(true);
@@ -1035,7 +1014,7 @@ jQuery(function ($) {
 	});
 
 	// minicolors
-	color_inputs.minicolors();
+	grid_container.find('.input-color').minicolors();
 
 	// sortable items
 	grid_container.sortable({
@@ -1048,7 +1027,6 @@ jQuery(function ($) {
 	build_icon_list();
 
 	// open font picker
-	// icon_inputs.on('click', function(e){
 	$(_doc).on('click', '.form-field-icon button', function(e){
 		e.preventDefault();
 
@@ -1081,7 +1059,7 @@ jQuery(function ($) {
 	});
 
 	// add images to the block
-	$('.block-upload').on('click', function() {
+	grid_container.on('click', '.block-upload', function() {
 		var _this = $(this);
 		var block_upload_frame;
 		var multiple = _this.data('multiple');
@@ -1136,8 +1114,8 @@ jQuery(function ($) {
 
 	sortable_block_images();
 
-	// add images to the block
-	$('.block-images').on('click', 'a.delete-block-image', function(e) {
+	// delete images on demand
+	grid_container.on('click', 'a.delete-block-image', function(e) {
 		e.preventDefault();
 
 		var _this = $(this);
@@ -1160,8 +1138,8 @@ jQuery(function ($) {
 		input.val(attachment_ids);
 	});
 
-	// change image source in select-images inputs
-	$('.select-images').on('change', function() {
+	// change image sou,wrce in select-images inputs
+	grid_container.on('change', '.select-images', function() {
 		var _this = $(this);
 		var img_url = _this.find('option:selected').attr('data-url');
 		var img = _this.closest('.form-field').find('img');
@@ -1178,13 +1156,19 @@ jQuery(function ($) {
 		do_xml();
 	});
 
-	// copy blocks
+	// copy blocks modal
 	copy_blocks.on('click', function() {
 		// get xml data
 		var data = '<xml-tag>' + get_xml() + '</xml-tag>';
 
 		// show modal
 		show_copy_modal(data);
+	});
+
+	// paste blocks modal
+	paste_blocks.on('click', function() {
+		// show modal
+		show_paste_modal();
 	});
 
 	// hide/show blog block options on change
@@ -1445,12 +1429,12 @@ jQuery(function ($) {
 
 		// create modal
 		var modal = _doc.createElement('div');
-		modal.id = 'lpb-copy-blocks-modal';
+		modal.id = 'lpb-copy-paste-blocks-modal';
 		body.appendChild(modal);
 
 		// close button
 		var close_button = _doc.createElement('div');
-		close_button.id = 'lpb-close-copy-blocks-modal';
+		close_button.id = 'lpb-close-copy-paste-blocks-modal';
 		close_button.innerHTML = '<i class="fa fa-remove"></i>';
 		modal.appendChild(close_button);
 
@@ -1476,6 +1460,86 @@ jQuery(function ($) {
 		}
 	}
 
+	// show and create paste blocks modal
+	function show_paste_modal() {
+		var body = document.getElementsByTagName('body')[0];
 
+		// modal overlay
+		var obfuscator = _doc.createElement('div');
+		obfuscator.id = 'lpb-copy-paste-obfuscator';
+		_html.appendChild(obfuscator);
+
+		// create modal
+		var modal = _doc.createElement('div');
+		modal.id = 'lpb-copy-paste-blocks-modal';
+		body.appendChild(modal);
+
+		// close button
+		var close_button = _doc.createElement('div');
+		close_button.id = 'lpb-close-copy-paste-blocks-modal';
+		close_button.innerHTML = '<i class="fa fa-remove"></i>';
+		modal.appendChild(close_button);
+
+		// modal description
+		var desc = _doc.createElement('p');
+		desc.innerHTML = lpb_admin_vars.paste_blocks_description;
+		modal.appendChild(desc);
+
+		// textarea
+		var textarea = _doc.createElement('textarea');
+		textarea.rows = 10;
+		modal.appendChild(textarea);
+
+		// append button
+		var append_button = _doc.createElement('div');
+		append_button.id = 'lpb-append-blocks';
+		append_button.innerHTML = '<i class="fa fa-paste"></i> ' + lpb_admin_vars.paste_blocks;
+		modal.appendChild(append_button);
+
+		obfuscator.addEventListener('click', close_paste_modal);
+		close_button.addEventListener('click', close_paste_modal);
+
+		$('#lpb-append-blocks').on('click', function() {
+			if ($(textarea).val()) {
+				var post_data = {
+					blocks_to_append: $(textarea).val(),
+					action: 'lpb_append_blocks',
+					append_blocks_nonce: lpb_admin_vars.nonce
+				};
+
+				$.post(lpb_admin_vars.ajaxurl, post_data, function(response) {
+					if (response) {
+						grid_container.append(response);
+
+						var editors = grid_container.find('textarea.wp-editor-area');
+
+						editors.each(function(i, el) {
+							// reload quickbuttons
+							var settings = {
+								id: el.id,
+								buttons: 'em,strong,link'
+							};
+
+							quicktags(settings);
+							QTags._buttonsInit();
+						});
+
+						// minicolors
+						$('.input-color').minicolors('destroy');
+						$('.input-color').minicolors();
+
+						close_paste_modal();
+					}
+				});
+			}
+		});
+
+		// close paste blocks modal
+		function close_paste_modal() {
+			obfuscator.remove();
+			close_button.remove();
+			modal.remove();
+		}
+	}
 });
 

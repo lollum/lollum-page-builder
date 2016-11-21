@@ -95,7 +95,7 @@ $border: #e3e5e6;
 	}
 }
 
-#lpb-copy-blocks-modal,
+#lpb-copy-paste-blocks-modal,
 .lpb-dialog {
 	background-color: #fff;
 	box-shadow: 0 3px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
@@ -131,31 +131,11 @@ $border: #e3e5e6;
 	z-index: 1001;
 }
 
-#lpb-copy-blocks-modal {
+#lpb-copy-paste-blocks-modal {
 	textarea {
 		display: block;
 		width: 100%;
 		color: $grey;
-	}
-
-	#lpb-close-copy-blocks-modal {
-		background-color: #59c2e6;
-		color: #fff;
-		display: block;
-		font-size: 16px;
-		height: 30px;
-		line-height: 30px;
-		position: absolute;
-		right: 10px;
-		text-align: center;
-		top: 10px;
-		width: 30px;
-
-		&:hover {
-			@include transition;
-			background-color: $blue;
-			cursor: pointer;
-		}
 	}
 
 	p {
@@ -165,6 +145,47 @@ $border: #e3e5e6;
 		padding-right: 2em;
 	}
 }
+
+#lpb-close-copy-paste-blocks-modal {
+	background-color: #59c2e6;
+	color: #fff;
+	display: block;
+	font-size: 16px;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	right: 10px;
+	text-align: center;
+	top: 10px;
+	width: 30px;
+
+	&:hover {
+		@include transition;
+		background-color: $blue;
+		cursor: pointer;
+	}
+}
+
+#lpb-append-blocks {
+	@include transition;
+	background-color: #9ccc65;
+	display: inline-block;
+	color: #fff;
+	font-size: 11px;
+	margin-top: 1em;
+	padding: 5px 15px;
+	float: right;
+
+	&:hover {
+		background-color: #8CB75A;
+		cursor: pointer;
+	}
+
+	.fa {
+		margin-right: 10px;
+	}
+}
+
 
 #lollum-page-builder {
 	margin-top: 35px;
@@ -838,4 +859,3 @@ $border: #e3e5e6;
 .lpb-enabled #local-storage-notice {
 	display: none !important;
 }
-

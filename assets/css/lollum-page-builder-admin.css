@@ -59,7 +59,7 @@
   display: none !important;
 }
 
-#lpb-copy-blocks-modal,
+#lpb-copy-paste-blocks-modal,
 .lpb-dialog {
   background-color: #fff;
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
@@ -89,13 +89,20 @@
   z-index: 1001;
 }
 
-#lpb-copy-blocks-modal textarea {
+#lpb-copy-paste-blocks-modal textarea {
   display: block;
   width: 100%;
   color: #b6bdc3;
 }
 
-#lpb-copy-blocks-modal #lpb-close-copy-blocks-modal {
+#lpb-copy-paste-blocks-modal p {
+  display: block;
+  font-size: 13px;
+  font-style: italic;
+  padding-right: 2em;
+}
+
+#lpb-close-copy-paste-blocks-modal {
   background-color: #59c2e6;
   color: #fff;
   display: block;
@@ -109,7 +116,7 @@
   width: 30px;
 }
 
-#lpb-copy-blocks-modal #lpb-close-copy-blocks-modal:hover {
+#lpb-close-copy-paste-blocks-modal:hover {
   transition-duration: 0.2s;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -117,11 +124,26 @@
   cursor: pointer;
 }
 
-#lpb-copy-blocks-modal p {
-  display: block;
-  font-size: 13px;
-  font-style: italic;
-  padding-right: 2em;
+#lpb-append-blocks {
+  transition-duration: 0.2s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #9ccc65;
+  display: inline-block;
+  color: #fff;
+  font-size: 11px;
+  margin-top: 1em;
+  padding: 5px 15px;
+  float: right;
+}
+
+#lpb-append-blocks:hover {
+  background-color: #8CB75A;
+  cursor: pointer;
+}
+
+#lpb-append-blocks .fa {
+  margin-right: 10px;
 }
 
 #lollum-page-builder {
@@ -869,7 +891,7 @@
 }
 
 @media (min-width: 768px) {
-  #lpb-copy-blocks-modal,
+  #lpb-copy-paste-blocks-modal,
   .lpb-dialog {
     left: 50%;
     margin-left: -335px;

@@ -5,7 +5,7 @@
  * @author   Lollum
  * @category Class
  * @package  Lollum_Page_Builder/Admin
- * @version  1.0.4
+ * @version  2.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -59,6 +59,9 @@ class LPB_Admin_Scripts {
 
 			wp_localize_script( 'lollum-page-builder-admin', 'lpb_admin_vars',
 				array(
+					'ajaxurl'                  => admin_url( 'admin-ajax.php' ),
+					'post_id'                  => absint( $post->ID ),
+					'nonce'                    => wp_create_nonce( 'lpb-append-blocks-nonce' ),
                     'delete_block'             => esc_html__( 'Are you sure you want to remove this block?', 'lollum-page-builder' ),
                     'paste_blocks'             => esc_html__( 'Append blocks', 'lollum-page-builder' ),
                     'copy_blocks_description'  => esc_html__( 'To reuse these blocks in another page copy this value to the clipboard. Then use the "Paste blocks" button (in the other page) to import the data.', 'lollum-page-builder' ),
