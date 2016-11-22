@@ -1519,6 +1519,7 @@ jQuery(function ($) {
 
 				$.post(lpb_admin_vars.ajaxurl, post_data, function(response) {
 					if (response) {
+						empty_message.hide();
 						grid_container.append(response);
 
 						var editors = grid_container.find('textarea.wp-editor-area');
