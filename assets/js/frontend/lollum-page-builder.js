@@ -73,6 +73,17 @@ to improve scrolling performance
 jQuery(function($) {
 
 	'use strict';
+	/* global DocumentTouch */
+
+	// Check if the browser support the Touch Events API
+	// This *does not* necessarily reflect a touchscreen device!!!
+	function maybe_touch() {
+		if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 	// Full-width rows
 	function full_width_rows() {
@@ -110,6 +121,11 @@ jQuery(function($) {
 
 	// Rows with the parallax effect
 	function parallax_sections() {
+		// Parallax is disabled in touch devices
+		if ( maybe_touch() ) {
+			return;
+		}
+
 		var blocks = $('.parallax-yes');
 
 		blocks.each(function() {
@@ -124,7 +140,11 @@ jQuery(function($) {
 
 	full_width_rows();
 
-	$(window).load(function() {
+	if ( maybe_touch() ) {
+		document.documentElement.className += ' lpb-maybe-touch';
+	}
+
+	$(window).on('load', function() {
 		parallax_sections();
 	});
 

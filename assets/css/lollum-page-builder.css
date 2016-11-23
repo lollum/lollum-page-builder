@@ -57,6 +57,11 @@
   margin-bottom: 0;
 }
 
+.lpb-maybe-touch .lpb-section {
+  background-attachment: scroll !important;
+  background-size: cover !important;
+}
+
 .lpb-row {
   box-sizing: border-box;
   margin-left: -15px;
