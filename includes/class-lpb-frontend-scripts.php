@@ -5,7 +5,7 @@
  * @author   Lollum
  * @category Class
  * @package  Lollum_Page_Builder/Classes
- * @version  2.1.2
+ * @version  2.2.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -150,7 +150,7 @@ class LPB_Frontend_Scripts {
 
 		$css = "
 			.lpb-section.row-stretch-boxed .lpb-page-row,
-			.lpb-section.row-stretch-full-boxed .lpb-page-row {
+			.lpb-section.row-stretch-normal-boxed .lpb-page-row {
 			  max-width: {$boxed_width}px;
 			}
 		";
