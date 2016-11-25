@@ -48,6 +48,8 @@ class LPB_Print_Blocks {
 					$success = $dom->loadXML( $xml );
 
 					if ( $success ) {
+						$this->full_size = 0;
+
 						foreach ( $dom->documentElement->childNodes as $item ) {
 							$tag = $item->nodeName;
 
