@@ -5,7 +5,7 @@
  * @author   Lollum
  * @category Class
  * @package  Lollum_Page_Builder/Classes
- * @version  1.0.0
+ * @version 2.2.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
