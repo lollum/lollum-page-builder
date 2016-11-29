@@ -96,7 +96,7 @@ jQuery(function($) {
 
 			// use this element as a reference, because
 			// it always has the correct position
-			var reference = _this.next('.lpb-clear-section');
+			var reference = $('.lpb-clear-section');
 
 			var left_pos = reference.offset().left;
 			var offset = 0 - left_pos;

@@ -50,6 +50,9 @@ class LPB_Print_Blocks {
 					if ( $success ) {
 						$this->full_size = 0;
 
+						// Print a reference element that has always the correct width and position
+						echo '<div class="lpb-clear-section"></div><!-- .lpb-clear-section -->' . "\n\n";
+
 						foreach ( $dom->documentElement->childNodes as $item ) {
 							$tag = $item->nodeName;
 
@@ -64,7 +67,6 @@ class LPB_Print_Blocks {
 							echo '</div><!-- /.lpb-page-row -->' . "\n\n";
 							if ( $this->full_section ) {
 								echo '</div><!-- /.lpb-section -->' . "\n\n";
-								echo '<div class="lpb-clear-section"></div><!-- .lpb-clear-section -->' . "\n\n";
 								$this->full_section = false;
 							}
 						}
