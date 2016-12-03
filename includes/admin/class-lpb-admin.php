@@ -5,7 +5,7 @@
  * @author   Lollum
  * @category Class
  * @package  Lollum_Page_Builder/Admin
- * @version  1.0.4
+ * @version  2.2.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -61,6 +61,7 @@ class LPB_Admin {
 
 			if ( $blocks && is_array( $blocks ) ) {
 				$xml = $_POST[ 'blocks_to_append' ];
+				$xml = stripslashes($xml);
 
 				if ( $xml ) {
 					$dom     = new DOMDocument();
