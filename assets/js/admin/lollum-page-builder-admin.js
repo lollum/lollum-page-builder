@@ -840,6 +840,11 @@ jQuery(function ($) {
 		e.preventDefault();
 
 		var _this = $(this);
+
+		if (_this.hasClass('disabled')) {
+			return;
+		}
+
 		var item_cloned = default_list_container.find('div[data-type="' + _this.data('block') + '"]').clone(true);
 
 		empty_message.hide();
@@ -849,6 +854,10 @@ jQuery(function ($) {
 		if (item_cloned) {
 			item_cloned.find('.item-xml').attr('name', 'item-xml[]');
 			grid_container.append(item_cloned);
+
+			if (item_cloned.data('clonable') === false) {
+				_this.addClass('disabled');
+			}
 
 			var editor = item_cloned.find('textarea.wp-editor-area');
 
@@ -908,6 +917,10 @@ jQuery(function ($) {
 			var count_blocks = grid_container.find('.page-item').length;
 
 			item_clicked.fadeOut(function(){
+				if (!item_clicked.data('clonable')) {
+					restore_clone(item_clicked);
+				}
+
 				item_clicked.remove();
 
 				if (count_blocks < 2) {
@@ -927,6 +940,7 @@ jQuery(function ($) {
 			var blocks = grid_container.find('.page-item');
 
 			blocks.fadeOut(function(){
+				restore_clone();
 				blocks.remove();
 				empty_message.show();
 				delete_all_blocks.prop('disabled', true);
@@ -1271,6 +1285,7 @@ jQuery(function ($) {
 		input.attr('id', new_id);
 
 		// remove old buttons (dirty workaround)
+		//item.find('#wp-' + id +  '-editor-tools').remove();
 		item.find('#qt_' + id +  '_toolbar').remove();
 
 		// add new quickbuttons
@@ -1281,7 +1296,38 @@ jQuery(function ($) {
 
 		quicktags(settings);
 		QTags._buttonsInit();
+
+		// attach correct editor to media button
+		item.find('button.add_media').data('editor', new_id);
 	}
+
+	// restore block button when a no-clonable element is deleted
+	function restore_clone(item) {
+		if (item) {
+			var type = item.data('type');
+
+			$('#blocks-selection').find('a[data-block="' + type + '"]').removeClass('disabled');
+		} else {
+			block_list.removeClass('disabled');
+		}
+	}
+
+	// when the page loads, check if there are already some no-clonable blocks
+	// selected and disable the buttons
+	function check_clonables() {
+		var blocks = grid_container.find('.page-item');
+
+		blocks.each(function() {
+			var _this = $(this);
+
+			if (!_this.data('clonable')) {
+				var type = _this.data('type');
+
+				$('#blocks-selection').find('a[data-block="' + type + '"]').addClass('disabled');
+			}
+		});
+	}
+	check_clonables();
 
 	// generate icon list
 	function build_icon_list() {
