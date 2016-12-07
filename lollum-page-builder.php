@@ -3,11 +3,11 @@
  * Plugin Name:       Lollum Page Builder
  * Plugin URI:        http://lollum.com/
  * Description:       A simple and lightweight page builder for developers.
- * Version:           2.2.5
+ * Version:           2.3.0
  * Author:            Lollum
  * Author URI:        http://lollum.com/
  * Requires at least: 4.1
- * Tested up to:      4.6.1
+ * Tested up to:      4.7
  * License:           GPLv3
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       lollum-page-builder
@@ -32,7 +32,7 @@ final class Lollum_Page_Builder {
 	/**
 	 * @var string
 	 */
-	public $version = '2.2.5';
+	public $version = '2.3.0';
 
 	/**
 	 * @var Lollum_Page_Builder The single instance of the class
