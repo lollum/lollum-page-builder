@@ -233,6 +233,21 @@
   color: #fff;
 }
 
+#blocks-selection a.disabled {
+  color: #cad2d9;
+}
+
+#blocks-selection a.disabled .block-name,
+#blocks-selection a.disabled .block-description,
+#blocks-selection a.disabled i {
+  color: #cad2d9;
+}
+
+#blocks-selection a.disabled:hover {
+  background-color: #f7f9fa;
+  cursor: default;
+}
+
 #blocks-selection .block-name {
   transition-duration: 0.2s;
   transition-property: all;

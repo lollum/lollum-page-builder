@@ -194,7 +194,6 @@ $border: #e3e5e6;
 	}
 }
 
-
 #lollum-page-builder {
 	margin-top: 35px;
 	position: relative;
@@ -255,6 +254,21 @@ $border: #e3e5e6;
 			.block-name,
 			i {
 				color: #fff;
+			}
+		}
+
+		&.disabled {
+			color: #cad2d9;
+
+			.block-name,
+			.block-description,
+			i {
+				color: #cad2d9;
+			}
+
+			&:hover {
+				background-color: $light;
+				cursor: default;
 			}
 		}
 	}
