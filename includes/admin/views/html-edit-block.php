@@ -12,7 +12,7 @@ $data  = isset( $data ) ? $data : null;
 $size  = $block->has_sizes() && isset( $data ) ? lpb_find_xml_value( $data, 'size' ) : $block->default_size();
 ?>
 
-<div class="page-item item-<?php echo esc_attr( $block->id() ); ?> item-<?php echo esc_attr( $size ); ?>" data-type="<?php echo esc_attr( $block->id() ); ?>">
+	<div class="page-item item-<?php echo esc_attr( $block->id() ); ?> item-<?php echo esc_attr( $size ); ?>" data-type="<?php echo esc_attr( $block->id() ); ?>" data-clonable="<?php echo $block->is_clonable() ? 'true' : 'false' ?>">
 
 	<div class="page-item-header">
 		<?php if ( $block->has_sizes() ) : ?>
