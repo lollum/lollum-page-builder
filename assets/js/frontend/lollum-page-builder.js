@@ -73,7 +73,7 @@ to improve scrolling performance
 jQuery(function($) {
 
 	'use strict';
-	/* global DocumentTouch */
+	/* global DocumentTouch, lpb_frontend_vars */
 
 	// Check if the browser support the Touch Events API
 	// This *does not* necessarily reflect a touchscreen device!!!
@@ -89,19 +89,31 @@ jQuery(function($) {
 	function full_width_rows() {
 		var rows = $('[data-stretch="full"]');
 
+		// use this element as a reference, because
+		// it always has the correct position
+		var reference = $('.lpb-clear-section');
+
+		// the default page container is the body element
+		// but developers can pass a custom container
+		var page_container = (lpb_frontend_vars.page_container === 'body') ? false : $(lpb_frontend_vars.page_container);
+		var page_container_left_offset = 0;
+		var page_container_right_offset = 0;
+
+		// calculate page container offset only when
+		// the element exists and if it's not the body
+		if (page_container && page_container.length > 0) {
+			page_container_left_offset = page_container.offset().left;
+			page_container_right_offset = $(window).width() - (page_container_left_offset + page_container.outerWidth());
+		}
+
+		var left_pos = reference.offset().left;
+		var offset = 0 - left_pos + page_container_left_offset;
+		var width = $(window).width() - page_container_left_offset - page_container_right_offset;
+
 		$.each(rows, function() {
 			var _this = $(this);
 
 			_this.addClass('hidden-row');
-
-			// use this element as a reference, because
-			// it always has the correct position
-			var reference = $('.lpb-clear-section');
-
-			var left_pos = reference.offset().left;
-			var offset = 0 - left_pos;
-			var width = $(window).width();
-
 			_this.css({
 				'position': 'relative',
 				'left': offset,
@@ -110,8 +122,8 @@ jQuery(function($) {
 
 			if (!_this.hasClass('row-stretch-full')) {
 				_this.css({
-					'padding-left': left_pos + 'px',
-					'padding-right': left_pos + 'px'
+					'padding-left': left_pos - page_container_left_offset + 'px',
+					'padding-right': left_pos - page_container_right_offset + 'px'
 				});
 			}
 
