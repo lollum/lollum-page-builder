@@ -5,7 +5,7 @@
  * @author   Lollum
  * @category Class
  * @package  Lollum_Page_Builder/Classes
- * @version 2.2.3
+ * @version 2.3.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -49,6 +49,7 @@ class LPB_Print_Blocks {
 
 					if ( $success ) {
 						$this->full_size = 0;
+						$this->close_section = false;
 
 						// Print a reference element that has always the correct width and position
 						echo '<div class="lpb-clear-section"></div><!-- .lpb-clear-section -->' . "\n\n";
@@ -148,7 +149,6 @@ class LPB_Print_Blocks {
 
 			if ( $this->full_section && $this->close_section ) {
 				echo '</div><!-- /.lpb-section -->' . "\n\n";
-				echo '<div class="lpb-clear-section"></div><!-- .lpb-clear-section -->' . "\n\n";
 				$this->full_section  = false;
 				$this->close_section = false;
 			}
