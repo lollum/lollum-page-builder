@@ -120,7 +120,7 @@ msgstr ""
 msgid "Click above to add some blocks"
 msgstr ""
 
-#: includes/admin/views/html-edit-block.php:42
+#: includes/admin/views/html-edit-block.php:47
 msgid "Block settings"
 msgstr ""
 
@@ -454,6 +454,14 @@ msgstr ""
 
 #: includes/lpb-block-functions.php:454
 msgid "You can add a custom ID and refer to it in your custom CSS"
+msgstr ""
+
+#: includes/lpb-block-functions.php:467
+msgid "Custom Name"
+msgstr ""
+
+#: includes/lpb-block-functions.php:469
+msgid "You can add a custom name to this section to better organize your blocks"
 msgstr ""
 
 #: lollum-page-builder.php:63, lollum-page-builder.php:70
