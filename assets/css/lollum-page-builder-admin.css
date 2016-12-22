@@ -777,6 +777,18 @@
   display: block;
 }
 
+#lollum-page-builder .item-section-label {
+  background-color: #59c2e6;
+  color: #fff;
+  padding: .3em 1em;
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 11px;
+  font-style: italic;
+}
+
 /* created with JS dynamically */
 
 #page-builder-obfuscator {
