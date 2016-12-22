@@ -5,7 +5,7 @@
  * @author   Lollum
  * @category Core
  * @package  Lollum_Page_Builder/Functions
- * @version  1.0.1
+ * @version  2.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -444,7 +444,7 @@ endif;
 
 if ( ! function_exists( 'lpb_id_input' ) ) :
 /**
- * Print text input.
+ * Print Custom ID input.
  */
 function lpb_id_input( $data = null ) {
 	$value = isset( $data ) ? lpb_find_xml_value( $data, 'custom-id' ) : '';
@@ -452,6 +452,21 @@ function lpb_id_input( $data = null ) {
 	echo '<div class="form-field"><label><span>' . esc_html__( 'Custom ID', 'lollum-page-builder' ) . '</span><input type="text" data-type="custom-id" class="xml esc" value="' . esc_attr( $value ) . '" /></label>';
 
 	echo '<br><span class="description">' . esc_html__( 'You can add a custom ID and refer to it in your custom CSS', 'lollum-page-builder' ) . '</span>';
+
+	echo '</div>';
+}
+endif;
+
+if ( ! function_exists( 'lpb_custom_name_input' ) ) :
+/**
+ * Print Custom name input.
+ */
+function lpb_custom_name_input( $data = null ) {
+	$value = isset( $data ) ? lpb_find_xml_value( $data, 'custom-name' ) : '';
+
+	echo '<div class="form-field"><label><span>' . esc_html__( 'Custom Name', 'lollum-page-builder' ) . '</span><input type="text" data-type="custom-name" class="xml esc custom-name" value="' . esc_attr( $value ) . '" /></label>';
+
+	echo '<br><span class="description">' . esc_html__( 'You can add a custom name to this section to better organize your blocks', 'lollum-page-builder' ) . '</span>';
 
 	echo '</div>';
 }

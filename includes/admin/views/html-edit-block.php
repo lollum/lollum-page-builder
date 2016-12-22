@@ -7,14 +7,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-$block = new LPB_Edit_Block( $block );
-$data  = isset( $data ) ? $data : null;
-$size  = $block->has_sizes() && isset( $data ) ? lpb_find_xml_value( $data, 'size' ) : $block->default_size();
+$block        = new LPB_Edit_Block( $block );
+$data         = isset( $data ) ? $data : null;
+$size         = $block->has_sizes() && isset( $data ) ? lpb_find_xml_value( $data, 'size' ) : $block->default_size();
+$section_name = ( $block->id() == 'section-open' ) && isset( $data ) ? lpb_find_xml_value( $data, 'custom-name' ) : '';
 ?>
 
 	<div class="page-item item-<?php echo esc_attr( $block->id() ); ?> item-<?php echo esc_attr( $size ); ?>" data-type="<?php echo esc_attr( $block->id() ); ?>" data-clonable="<?php echo $block->is_clonable() ? 'true' : 'false' ?>">
 
 	<div class="page-item-header">
+		<?php if ( ( $block->id() == 'section-open' ) ): ?>
+			<span class="item-section-label" <?php echo ! $section_name ? 'style="display:none;"' : ''; ?>><?php echo esc_html( $section_name ); ?></span>
+		<?php endif; ?>
+
 		<?php if ( $block->has_sizes() ) : ?>
 			<div class="change-size">
 				<span class="btn-change-size btn-plus"><i class="fa fa-plus"></i></span>
@@ -45,6 +50,11 @@ $size  = $block->has_sizes() && isset( $data ) ? lpb_find_xml_value( $data, 'siz
 		<div class="settings">
 
 			<?php
+			// print custon name in section blocks
+			if ( $block->id() == 'section-open' ) {
+				lpb_custom_name_input( $data );
+			}
+
 			// print custom ID field if supported
 			if ( $block->has_custom_id() ) {
 				lpb_id_input( $data );

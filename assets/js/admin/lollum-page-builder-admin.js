@@ -1206,6 +1206,24 @@ jQuery(function ($) {
 
 	hide_show_blog_options();
 
+	// add custom name to sections
+	grid_container.on('input', 'input.custom-name', function() {
+		var _this = $(this);
+		var section = _this.closest('.item-section-open');
+		var label = section.find('.item-section-label');
+
+		if ($(_this).data('lastval') !== $(_this).val()) {
+			$(_this).data('lastval', $(_this).val());
+			label.text($(_this).val());
+
+			if ($(_this).val()) {
+				label.show();
+			} else {
+				label.hide();
+			}
+		}
+	});
+
 	// for each block, store the data in a hidden input
 	function do_xml() {
 		var items_collection = grid_container.find('.page-item');
