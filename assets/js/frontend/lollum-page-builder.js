@@ -106,7 +106,13 @@ jQuery(function($) {
 			page_container_right_offset = $(window).width() - (page_container_left_offset + page_container.outerWidth());
 		}
 
-		var left_pos = reference.offset().left;
+		var left_pos = 0;
+
+		// Check if the element exists
+		if (reference && reference.length > 0) {
+			left_pos = reference.offset().left;
+		}
+
 		var offset = 0 - left_pos + page_container_left_offset;
 		var width = $(window).width() - page_container_left_offset - page_container_right_offset;
 
