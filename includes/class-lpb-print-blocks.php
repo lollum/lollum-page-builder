@@ -5,7 +5,7 @@
  * @author   Lollum
  * @category Class
  * @package  Lollum_Page_Builder/Classes
- * @version 2.3.1
+ * @version 2.4.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -43,6 +43,9 @@ class LPB_Print_Blocks {
 				$blocks = lpb_get_blocks();
 				$xml    = get_post_meta( $post->ID, '_lollum_page_builder_xml_val', true );
 
+				// Print a reference element that has always the correct width and position
+				echo '<div class="lpb-clear-section"></div><!-- .lpb-clear-section -->' . "\n\n";
+
 				if ( $xml && $blocks && is_array( $blocks ) ) {
 					$dom     = new DOMDocument();
 					$success = $dom->loadXML( $xml );
@@ -50,9 +53,6 @@ class LPB_Print_Blocks {
 					if ( $success ) {
 						$this->full_size = 0;
 						$this->close_section = false;
-
-						// Print a reference element that has always the correct width and position
-						echo '<div class="lpb-clear-section"></div><!-- .lpb-clear-section -->' . "\n\n";
 
 						foreach ( $dom->documentElement->childNodes as $item ) {
 							$tag = $item->nodeName;
