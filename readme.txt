@@ -1,6 +1,6 @@
 === Lollum Page Builder ===
 Requires at least: 4.1
-Tested up to: 4.7
+Tested up to: 4.7.3
 License: GPLv3
 
 A simple and lightweight page builder for developers.
