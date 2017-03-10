@@ -34,7 +34,7 @@ class LPB_Print_Blocks {
 
 		$is_active = ( get_post_meta( $post->ID, '_lpb_editor_type', true ) == 'page-builder' ) ? true : false;
 
-		if ( $is_active ) {
+		if ( $is_active && apply_filters( 'lollum_page_builder_use_page_builder', true, $post->ID ) ) {
 			ob_start();
 
 			if ( ! class_exists( 'DOMDocument' ) ) {
