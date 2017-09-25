@@ -50,7 +50,7 @@ class LPB_Frontend_Scripts {
 
 			wp_localize_script( 'lollum-page-builder', 'lpb_frontend_vars',
 				array(
-					'page_container' => apply_filters( 'lpb_page_container', '#body' ),
+					'page_container' => apply_filters( 'lpb_page_container', 'body' ),
 				)
 			);
 		}
